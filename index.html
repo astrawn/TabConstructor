@@ -131,8 +131,7 @@
           <div class="row mt-2 ml-3">
             <button class="btn-mybtn" onClick="addbar()">Add Bar</button>
           </div>
-          <div class="row mt-2 ml-1">
-            <div class="col-sm">
+          <div class="row mt-2 ml-3">
               <label class="mr-2" for="chords">Chords:</label>
               <select name="chords" id="chords" onchange="addchord()">
                 <option selected value>--</option>
@@ -145,7 +144,14 @@
                 <option value="G">G</option>
                 <option value="Custom">Custom</option>
               </select>
-              <br>
+              <select class="ml-2" name="sharpflat" id="sharpflat" onchange="">
+                <option selected value>--</option>
+                <option value="sharp">&#x266f;</option>
+                <option value="flat">&#x266d;</option>
+              </select>
+          </div>
+          <div class="row mt-2 ml-1">
+            <div class="col-sm">
               <label class="mr-2 ml-2" for="customizer">Customize:</label>
               <div class="mr-2 ml-4 mb-2" name="customizer" id="customizer">
                 <label class="mr-2" for="e-string">e:</label>
@@ -170,18 +176,21 @@
               <div class="mr-2 ml-4" name="chordoptions" id="chordoptions">
                 <label class="mr-2" for="chordformat">Format:</label>
                 <select name="chordformat" id="chordformat" onchange="">
-                  <option value="Full">Full</option>
+                  <option selected value="Full">Full</option>
                   <option value="Inner">Inner</option>
                 </select>
               </div>
             </div>
-            <div class="col-sm ml-0">
+            <div class="col-sm">
+              <br><br>
               <textarea readonly class="customtextarea2" id="chorddisplay" name="chorddisplay"> e |------|&#013;&#010; B |------|&#013;&#010; G |------|&#013;&#010; D |------|&#013;&#010; A |------|&#013;&#010; E |------|</textarea>
+              <br>
+              <button class="btn-mybtn" id="cpchord" name="cpchord" style="width: 120px" onclick="copyChord()">Copy Chord</button>
             </div>
           </div>
           <div class="row mt-4 ml-3 mb-2">
             <button class="btn-mybtn mr-2" id="cpbtn" name="cpbtn" onclick="copyToClipboard()">Copy to Clipboard</button>
-            <button class="btn-mybtn" id="dlbtn" name="dlbtn" onclick="download('mytab.txt', document.getElementById('tab').value)">Download as Text File</button>
+            <button class="btn-mybtn" id="dlbtn" name="dlbtn" onclick="download('mytab.txt', document.getElementById('tab').value)">Download as .txt File</button>
           </div>
         </div>
       </div>
