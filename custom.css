@@ -7,9 +7,30 @@
 .customlabel {
   display: block;
 }
+
 .customtextarea {
   resize: none; 
   display: block;
   width: 800px;
   height: 500px;
+  font-family: Verdana, sans-serif;
+}
+
+.customtextarea::placeholder {
+  color: #6c757d;
+  opacity: 0.7;
+}
+
+.btn-mybtn {
+  transition-duration: 0.4s;
+  background-color: lightgrey;
+  border: 2px;
+  border-color: black;
+  color: black;
+  font-family: Verdana;
+  border-radius: 5px;
+}
+
+.btn-mybtn:hover{
+  background-color: #b4b4b4;
 }
