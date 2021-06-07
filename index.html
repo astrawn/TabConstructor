@@ -70,12 +70,12 @@
 
   <script>
     function insert(ctrl){
-      index = document.getElementById(ctrl).selectionStart;
-      end = document.getElementById(ctrl).value.length;
+      var index = document.getElementById(ctrl).selectionStart;
+      var end = document.getElementById(ctrl).value.length;
 
       if(key != 8 && key != 46){
-        text = document.getElementById(ctrl).value;
-        newtext = text.substr(0, index) + text.substr(index+1, end-index);
+        var text = document.getElementById(ctrl).value;
+        var newtext = text.substr(0, index) + text.substr(index+1, end-index);
         document.getElementById(ctrl).value = newtext; 
       }
       /*else{
@@ -89,14 +89,26 @@
   </script>
 
   <script>
-    function download(){
+    function download(filename, text){
+      var element = document.createElement('a');
+      element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+      element.setAttribute('download', filename);
 
+      element.style.display = 'none';
+      document.body.appendChild(element);
+
+      element.click();
+
+      document.body.removeChild(element);
     }
   </script>
 
   <script>
     function copyToClipboard(){
-      
+      let textarea = document.getElementById("tab");
+      textarea.select();
+      document.execCommand("copy");
+      textarea.blur();
     }
   </script>
 </head>
@@ -131,8 +143,8 @@
             </select>
           </div>
           <div class="row mt-1 ml-2 mb-1">
-            <button class="btn-mybtn mr-2">Copy to Clipboard</button>
-            <button class="btn-mybtn">Download as Text File</button>
+            <button class="btn-mybtn mr-2" id="cpbtn" name="cpbtn" onclick="copyToClipboard()">Copy to Clipboard</button>
+            <button class="btn-mybtn" id="dlbtn" name="dlbtn" onclick="download('mytab.txt', document.getElementById('tab').value)">Download as Text File</button>
           </div>
         </div>
       </div>
