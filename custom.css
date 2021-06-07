@@ -24,8 +24,7 @@
 .btn-mybtn {
   transition-duration: 0.4s;
   background-color: lightgrey;
-  border: 2px;
-  border-color: black;
+  border: 1px solid #8f8f8f;
   color: black;
   font-family: Verdana;
   border-radius: 5px;
@@ -33,4 +32,20 @@
 
 .btn-mybtn:hover{
   background-color: #b4b4b4;
+}
+
+.customcontainer1{
+  margin: 20px;
+}
+
+.customcontainer2{
+  margin-left: 0 !important;
+  margin-top: 32px;
+  border: 1px solid #8f8f8f;
+  width: 100%;
+}
+
+.customcontainer2.row{
+  margin: 0;
+  padding: 0;
 }
