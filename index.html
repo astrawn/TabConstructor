@@ -123,7 +123,7 @@
       <div class="col-sm">
         <label class="customlabel" for="tab">Tab Sheet:</label>
         <!--onkeydown="keyPress(event)" oninput="insert(this.id)"-->
-        <textarea class="customtextarea" id="tab" name="tab" placeholder="  e |-------------------------------------------------------------------------------------------|&#13;&#10;  b |-------------------------------------------------------------------------------------------|&#13;&#10;  g |-------------------------------------------------------------------------------------------|&#13;&#10;  d |-------------------------------------------------------------------------------------------|&#13;&#10;  a |-------------------------------------------------------------------------------------------|&#13;&#10;  E |-------------------------------------------------------------------------------------------|&#13;&#10;"></textarea>
+        <textarea class="customtextarea" id="tab" name="tab" placeholder="  e |-------------------------------------------------------------------------------------------|&#13;&#10;  B |-------------------------------------------------------------------------------------------|&#13;&#10;  G |-------------------------------------------------------------------------------------------|&#13;&#10;  D |-------------------------------------------------------------------------------------------|&#13;&#10;  A |-------------------------------------------------------------------------------------------|&#13;&#10;  E |-------------------------------------------------------------------------------------------|&#13;&#10;"></textarea>
         <br>
       </div>
       <div class="col-sm">
@@ -135,7 +135,7 @@
             <div class="col-sm">
               <label class="mr-2" for="chords">Chords:</label>
               <select name="chords" id="chords" onchange="addchord()">
-                <option disabled selected value>--</option>
+                <option selected value>--</option>
                 <option value="A">A</option>
                 <option value="B">B</option>
                 <option value="C">C</option>
@@ -169,11 +169,14 @@
               <label class="mr-2 ml-2" for="chordoptions">Options:</label>
               <div class="mr-2 ml-4" name="chordoptions" id="chordoptions">
                 <label class="mr-2" for="chordformat">Format:</label>
-
+                <select name="chordformat" id="chordformat" onchange="">
+                  <option value="Full">Full</option>
+                  <option value="Inner">Inner</option>
+                </select>
               </div>
             </div>
             <div class="col-sm ml-0">
-              <textarea readonly class="customtextarea2" id="chorddisplay" name="chorddisplay"> e |------|&#013;&#010; b |------|&#013;&#010; g |------|&#013;&#010; d |------|&#013;&#010; a |------|&#013;&#010; E |------|</textarea>
+              <textarea readonly class="customtextarea2" id="chorddisplay" name="chorddisplay"> e |------|&#013;&#010; B |------|&#013;&#010; G |------|&#013;&#010; D |------|&#013;&#010; A |------|&#013;&#010; E |------|</textarea>
             </div>
           </div>
           <div class="row mt-4 ml-3 mb-2">

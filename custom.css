@@ -15,15 +15,18 @@
   display: block;
   width: 800px;
   height: 500px;
-  font-family: Verdana, sans-serif;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.8em;
+
 }
 
 .customtextarea2 {
   resize: none;
   display: block;
-  width: 110px;
-  height: 160px;
-  font-family: Verdana;
+  width: 120px;
+  height: 140px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.85em;
 }
 
 .customtextarea::placeholder {
