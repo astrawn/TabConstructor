@@ -17,7 +17,7 @@
 
   <script>
     function updateCustom(){
-      
+
     }
   </script>
 
@@ -26,29 +26,24 @@
       var textArea = document.getElementById("chorddisplay");
       var sf = document.getElementById("sharpflat");
       var chord = document.getElementById("chords").value;
-      var e = document.getElementById("e-string");
-      var B = document.getElementById("b-string");
-      var G = document.getElementById("g-string");
-      var D = document.getElementById("d-string");
-      var A = document.getElementById("a-string");
-      var E = document.getElementById("E-string");
+
+      if(chord != "Custom"){
+        document.getElementById("enable-e").disabled = true;
+        document.getElementById("enable-b").disabled = true;
+        document.getElementById("enable-g").disabled = true;
+        document.getElementById("enable-d").disabled = true;
+        document.getElementById("enable-a").disabled = true;
+        document.getElementById("enable-E").disabled = true;
+        document.getElementById("e-string").disabled = true;
+        document.getElementById("b-string").disabled = true;
+        document.getElementById("g-string").disabled = true;
+        document.getElementById("d-string").disabled = true;
+        document.getElementById("a-string").disabled = true;
+        document.getElementById("E-string").disabled = true;
+      }
 
       switch(chord){
         case "":
-          e.disabled = true;
-          B.disabled = true;
-          G.disabled = true;
-          D.disabled = true;
-          A.disabled = true;
-          E.disabled = true;
-
-          e.value = '';
-          B.value = '';
-          G.value = '';
-          D.value = '';
-          A.value = '';
-          E.value = '';
-
           document.getElementById("sharp").disabled = true;
           document.getElementById("flat").disabled = true;
 
@@ -56,20 +51,6 @@
 
           break;
         case "A":
-          e.disabled = true;
-          B.disabled = true;
-          G.disabled = true;
-          D.disabled = true;
-          A.disabled = true;
-          E.disabled = true;
-
-          e.value = '';
-          B.value = '';
-          G.value = '';
-          D.value = '';
-          A.value = '';
-          E.value = '';
-
           document.getElementById("sharp").disabled = false;
           document.getElementById("flat").disabled = false;
 
@@ -85,20 +66,6 @@
 
           break;
         case "B":
-          e.disabled = true;
-          B.disabled = true;
-          G.disabled = true;
-          D.disabled = true;
-          A.disabled = true;
-          E.disabled = true;
-
-          e.value = '';
-          B.value = '';
-          G.value = '';
-          D.value = '';
-          A.value = '';
-          E.value = '';
-
           document.getElementById("sharp").disabled = true;
           document.getElementById("flat").disabled = false;
 
@@ -115,20 +82,6 @@
 
           break;
         case "C":
-          e.disabled = true;
-          B.disabled = true;
-          G.disabled = true;
-          D.disabled = true;
-          A.disabled = true;
-          E.disabled = true;
-
-          e.value = '';
-          B.value = '';
-          G.value = '';
-          D.value = '';
-          A.value = '';
-          E.value = '';
-
           document.getElementById("sharp").disabled = false;
           document.getElementById("flat").disabled = true;
 
@@ -145,20 +98,6 @@
 
           break;
         case "D":
-          e.disabled = true;
-          B.disabled = true;
-          G.disabled = true;
-          D.disabled = true;
-          A.disabled = true;
-          E.disabled = true;
-
-          e.value = '';
-          B.value = '';
-          G.value = '';
-          D.value = '';
-          A.value = '';
-          E.value = '';
-
           document.getElementById("sharp").disabled = false;
           document.getElementById("flat").disabled = false;
 
@@ -174,20 +113,6 @@
 
           break;
         case "E":
-          e.disabled = true;
-          B.disabled = true;
-          G.disabled = true;
-          D.disabled = true;
-          A.disabled = true;
-          E.disabled = true;
-
-          e.value = '';
-          B.value = '';
-          G.value = '';
-          D.value = '';
-          A.value = '';
-          E.value = '';
-
           document.getElementById("sharp").disabled = true;
           document.getElementById("flat").disabled = false;
 
@@ -204,20 +129,6 @@
 
           break;
         case "F":
-          e.disabled = true;
-          B.disabled = true;
-          G.disabled = true;
-          D.disabled = true;
-          A.disabled = true;
-          E.disabled = true;
-
-          e.value = '';
-          B.value = '';
-          G.value = '';
-          D.value = '';
-          A.value = '';
-          E.value = '';
-
           document.getElementById("sharp").disabled = false;
           document.getElementById("flat").disabled = true;
 
@@ -234,20 +145,6 @@
 
           break;
         case "G":
-          e.disabled = true;
-          B.disabled = true;
-          G.disabled = true;
-          D.disabled = true;
-          A.disabled = true;
-          E.disabled = true;
-
-          e.value = '';
-          B.value = '';
-          G.value = '';
-          D.value = '';
-          A.value = '';
-          E.value = '';
-
           document.getElementById("sharp").disabled = false;
           document.getElementById("flat").disabled = false;
 
@@ -263,12 +160,12 @@
 
           break;
         case "Custom":
-          e.disabled = false;
-          B.disabled = false;
-          G.disabled = false;
-          D.disabled = false;
-          A.disabled = false;
-          E.disabled = false;
+          document.getElementById("e-string").disabled = false;
+          document.getElementById("b-string").disabled = false;
+          document.getElementById("g-string").disabled = false;
+          document.getElementById("d-string").disabled = false;
+          document.getElementById("a-string").disabled = false;
+          document.getElementById("E-string").disabled = false;
 
           document.getElementById("sharp").disabled = true;
           document.getElementById("flat").disabled = true;
@@ -400,6 +297,71 @@
       }
       else{
         E.disabled = true;
+      }
+    }
+  </script>
+
+  <script>
+    function changeACustom(){
+      var A = document.getElementById("a-string");
+      var check = document.getElementById("enable-a");
+      if(check.checked == true){
+        A.disabled = false;
+      }
+      else{
+        A.disabled = true;
+      }
+    }
+  </script>
+
+  <script>
+    function changeDCustom(){
+      var D = document.getElementById("d-string");
+      var check = document.getElementById("enable-d");
+      if(check.checked == true){
+        D.disabled = false;
+      }
+      else{
+        D.disabled = true;
+      }
+    }
+  </script>
+
+  <script>
+    function changeGCustom(){
+      var G = document.getElementById("g-string");
+      var check = document.getElementById("enable-g");
+      if(check.checked == true){
+        G.disabled = false;
+      }
+      else{
+        G.disabled = true;
+      }
+    }
+  </script>
+
+  <script>
+    function changeBCustom(){
+      var B = document.getElementById("b-string");
+      var check = document.getElementById("enable-b");
+      if(check.checked == true){
+        B.disabled = false;
+      }
+      else{
+        B.disabled = true;
+      }
+    }
+  </script>
+
+  <script>
+    function changeeCustom(){
+      var e = document.getElementById("e-string");
+      var check = document.getElementById("enable-e");
+      if(check.checked == true){
+        e.disabled = false;
+      }
+      else{
+        e.disabled = true;
       }
     }
   </script>
