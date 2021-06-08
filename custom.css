@@ -17,16 +17,18 @@
   height: 500px;
   font-family: 'Courier New', Courier, monospace;
   font-size: 0.8em;
+  padding: 15px;
 
 }
 
 .customtextarea2 {
   resize: none;
   display: block;
-  width: 120px;
+  width: 130px;
   height: 140px;
   font-family: 'Courier New', Courier, monospace;
   font-size: 0.85em;
+  padding: 5px;
 }
 
 .customtextarea::placeholder {

@@ -11,7 +11,7 @@
   <script>
     function addbar(){
       var text = $('#tab');
-      text.val(text.val() + "  e |-------------------------------------------------------------------------------------------|\n  b |-------------------------------------------------------------------------------------------|\n  g |-------------------------------------------------------------------------------------------|\n  d |-------------------------------------------------------------------------------------------|\n  a |-------------------------------------------------------------------------------------------|\n  E |-------------------------------------------------------------------------------------------|\n\n");
+      text.val(text.val() + "e |-------------------------------------------------------------------------------------------|\nB |-------------------------------------------------------------------------------------------|\nG |-------------------------------------------------------------------------------------------|\nD |-------------------------------------------------------------------------------------------|\nA |-------------------------------------------------------------------------------------------|\nE |-------------------------------------------------------------------------------------------|\n\n");
     }
   </script>
 
@@ -111,6 +111,37 @@
       textarea.blur();
     }
   </script>
+
+  <script>
+    function copyChord(){
+
+    }
+  </script>
+
+  <script>
+    function insertChord(){
+      var textArea = document.getElementById("chorddisplay");
+      var arrayOfLines = textArea.value.split("\n");
+      var index = document.getElementById("tab").selectionStart;
+      var end = document.getElementById("tab").value.length;
+
+      var text = document.getElementById("tab").value;
+      var newtext = text.substr(0, index) + arrayOfLines[0].charAt(7) + text.substr(index+1, end);
+      index = index + 98;
+      newtext = newtext.substr(0, index) + arrayOfLines[1].charAt(7) +newtext.substr(index+1, end);
+      index = index + 98;
+      newtext = newtext.substr(0, index) + arrayOfLines[2].charAt(7) +newtext.substr(index+1, end);
+      index = index + 98;
+      newtext = newtext.substr(0, index) + arrayOfLines[3].charAt(7) +newtext.substr(index+1, end);
+      index = index + 98;
+      newtext = newtext.substr(0, index) + arrayOfLines[4].charAt(7) +newtext.substr(index+1, end);
+      index = index + 98;
+      newtext = newtext.substr(0, index) + arrayOfLines[5].charAt(7) +newtext.substr(index+1, end);
+      document.getElementById("tab").value = newtext;
+      document.getElementById("tab").focus();
+
+    }
+  </script>
 </head>
 <body>
   <div class="banner jumbotron text-center">
@@ -123,7 +154,7 @@
       <div class="col-sm">
         <label class="customlabel" for="tab">Tab Sheet:</label>
         <!--onkeydown="keyPress(event)" oninput="insert(this.id)"-->
-        <textarea class="customtextarea" id="tab" name="tab" placeholder="  e |-------------------------------------------------------------------------------------------|&#13;&#10;  B |-------------------------------------------------------------------------------------------|&#13;&#10;  G |-------------------------------------------------------------------------------------------|&#13;&#10;  D |-------------------------------------------------------------------------------------------|&#13;&#10;  A |-------------------------------------------------------------------------------------------|&#13;&#10;  E |-------------------------------------------------------------------------------------------|&#13;&#10;"></textarea>
+        <textarea class="customtextarea" id="tab" name="tab" placeholder="e |-------------------------------------------------------------------------------------------|&#13;&#10;B |-------------------------------------------------------------------------------------------|&#13;&#10;G |-------------------------------------------------------------------------------------------|&#13;&#10;D |-------------------------------------------------------------------------------------------|&#13;&#10;A |-------------------------------------------------------------------------------------------|&#13;&#10;E |-------------------------------------------------------------------------------------------|&#13;&#10;"></textarea>
         <br>
       </div>
       <div class="col-sm">
@@ -155,22 +186,22 @@
               <label class="mr-2 ml-2" for="customizer">Customize:</label>
               <div class="mr-2 ml-4 mb-2" name="customizer" id="customizer">
                 <label class="mr-2" for="e-string">e:</label>
-                <input disabled class="custominput" type="number" name="e-string" id="e-string" onblur=""/>
+                <input disabled class="custominput" type="number" max="40" name="e-string" id="e-string" onblur=""/>
                 <br>
                 <label class="mr-2" for="b-string">B:</label>
-                <input disabled class="custominput" type="number" name="b-string" id="b-string" onblur=""/>
+                <input disabled class="custominput" type="number" max="40" name="b-string" id="b-string" onblur=""/>
                 <br>
                 <label class="mr-2" for="g-string">G:</label>
-                <input disabled class="custominput" type="number" name="g-string" id="g-string" onblur=""/>
+                <input disabled class="custominput" type="number" max="40" name="g-string" id="g-string" onblur=""/>
                 <br>
                 <label class="mr-2" for="d-string">D:</label>
-                <input disabled class="custominput" type="number" name="d-string" id="d-string" onblur=""/>
+                <input disabled class="custominput" type="number" max="40" name="d-string" id="d-string" onblur=""/>
                 <br>
                 <label class="mr-2" for="a-string">A:</label>
-                <input disabled class="custominput" type="number" name="a-string" id="a-string" onblur=""/>
+                <input disabled class="custominput" type="number" max="40" name="a-string" id="a-string" onblur=""/>
                 <br>
                 <label class="mr-2" for="E-string">E:</label>
-                <input disabled class="custominput" type="number" name="E-string" id="E-string" onblur=""/>
+                <input disabled class="custominput" type="number" max="40" name="E-string" id="E-string" onblur=""/>
               </div>
               <label class="mr-2 ml-2" for="chordoptions">Options:</label>
               <div class="mr-2 ml-4" name="chordoptions" id="chordoptions">
@@ -183,9 +214,11 @@
             </div>
             <div class="col-sm">
               <br><br>
-              <textarea readonly class="customtextarea2" id="chorddisplay" name="chorddisplay"> e |------|&#013;&#010; B |------|&#013;&#010; G |------|&#013;&#010; D |------|&#013;&#010; A |------|&#013;&#010; E |------|</textarea>
+              <textarea readonly class="customtextarea2" id="chorddisplay" name="chorddisplay">e |----0---|&#013;&#010;B |----2---|&#013;&#010;G |----2---|&#013;&#010;D |----2---|&#013;&#010;A |----0---|&#013;&#010;E |----x---|</textarea>
               <br>
               <button class="btn-mybtn" id="cpchord" name="cpchord" style="width: 120px" onclick="copyChord()">Copy Chord</button>
+              <br>
+              <button class="btn-mybtn mt-2" id="insertchord" name="insertchord" style="width: 120px" onclick="insertChord()">Insert Chord</button>
             </div>
           </div>
           <div class="row mt-4 ml-3 mb-2">
