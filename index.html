@@ -43,6 +43,9 @@
           A.value = '';
           E.value = '';
 
+          document.getElementById("sharp").disabled = true;
+          document.getElementById("flat").disabled = true;
+
           textArea.value = "e |------|\nB |------|\nG |------|\nD |------|\nA |------|\nE |------|";          
 
           break;
@@ -60,6 +63,9 @@
           D.value = '';
           A.value = '';
           E.value = '';
+
+          document.getElementById("sharp").disabled = false;
+          document.getElementById("flat").disabled = false;
 
           if(sf.value == "sharp"){
             textArea.value = "e |---6---|\nB |---6---|\nG |---7---|\nD |---8---|\nA |---8---|\nE |---6---|";
@@ -87,7 +93,19 @@
           A.value = '';
           E.value = '';
 
-          textArea.value = "e |---2---|\nB |---4---|\nG |---4---|\nD |---4---|\nA |---2---|\nE |---x---|";
+          document.getElementById("sharp").disabled = true;
+          document.getElementById("flat").disabled = false;
+
+          if(sf.value == "sharp"){
+            sf.value = "";
+            textArea.value = "e |---2---|\nB |---4---|\nG |---4---|\nD |---4---|\nA |---2---|\nE |---x---|";
+          }
+          else if(sf.value == "flat"){
+            textArea.value = "e |---1---|\nB |---3---|\nG |---3---|\nD |---3---|\nA |---1---|\nE |---x---|";
+          }   
+          else{
+            textArea.value = "e |---2---|\nB |---4---|\nG |---4---|\nD |---4---|\nA |---2---|\nE |---x---|";
+          }
 
           break;
         case "C":
@@ -105,7 +123,19 @@
           A.value = '';
           E.value = '';
 
-          textArea.value = "e |---0---|\nB |---1---|\nG |---0---|\nD |---2---|\nA |---3---|\nE |---x---|";
+          document.getElementById("sharp").disabled = false;
+          document.getElementById("flat").disabled = true;
+
+          if(sf.value == "sharp"){
+            textArea.value = "e |---4---|\nB |---6---|\nG |---6---|\nD |---6---|\nA |---4---|\nE |---x---|";
+          }
+          else if(sf.value == "flat"){
+            sf.value = "";
+            textArea.value = "e |---0---|\nB |---1---|\nG |---0---|\nD |---2---|\nA |---3---|\nE |---x---|";
+          }   
+          else{
+            textArea.value = "e |---0---|\nB |---1---|\nG |---0---|\nD |---2---|\nA |---3---|\nE |---x---|";
+          }
 
           break;
         case "D":
@@ -123,7 +153,18 @@
           A.value = '';
           E.value = '';
 
-          textArea.value = "e |---2---|\nB |---3---|\nG |---2---|\nD |---0---|\nA |---x---|\nE |---x---|";
+          document.getElementById("sharp").disabled = false;
+          document.getElementById("flat").disabled = false;
+
+          if(sf.value == "sharp"){
+            textArea.value = "e |---6---|\nB |---8---|\nG |---8---|\nD |---8---|\nA |---6---|\nE |---x---|";
+          }
+          else if(sf.value == "flat"){
+            textArea.value = "e |---4---|\nB |---6---|\nG |---6---|\nD |---6---|\nA |---4---|\nE |---x---|";
+          }   
+          else{
+            textArea.value = "e |---2---|\nB |---3---|\nG |---2---|\nD |---0---|\nA |---x---|\nE |---x---|";
+          }
 
           break;
         case "E":
@@ -141,7 +182,19 @@
           A.value = '';
           E.value = '';
 
-          textArea.value = "e |---0---|\nB |---0---|\nG |---1---|\nD |---2---|\nA |---2---|\nE |---0---|";
+          document.getElementById("sharp").disabled = true;
+          document.getElementById("flat").disabled = false;
+
+          if(sf.value == "sharp"){
+            sf.value = "";
+            textArea.value = "e |---0---|\nB |---0---|\nG |---1---|\nD |---2---|\nA |---2---|\nE |---0---|";
+          }
+          else if(sf.value == "flat"){
+            textArea.value = "e |---6---|\nB |---8---|\nG |---8---|\nD |---8---|\nA |---6---|\nE |---x---|";
+          }   
+          else{
+            textArea.value = "e |---0---|\nB |---0---|\nG |---1---|\nD |---2---|\nA |---2---|\nE |---0---|";
+          }
 
           break;
         case "F":
@@ -159,7 +212,19 @@
           A.value = '';
           E.value = '';
 
-          textArea.value = "e |---1---|\nB |---1---|\nG |---2---|\nD |---3---|\nA |---x---|\nE |---x---|";
+          document.getElementById("sharp").disabled = false;
+          document.getElementById("flat").disabled = true;
+
+          if(sf.value == "sharp"){
+            textArea.value = "e |---2---|\nB |---2---|\nG |---3---|\nD |---4---|\nA |---4---|\nE |---2---|";
+          }
+          else if(sf.value == "flat"){
+            sf.value = "";
+            textArea.value = "e |---1---|\nB |---1---|\nG |---2---|\nD |---3---|\nA |---x---|\nE |---x---|";
+          }   
+          else{
+            textArea.value = "e |---1---|\nB |---1---|\nG |---2---|\nD |---3---|\nA |---x---|\nE |---x---|";
+          }
 
           break;
         case "G":
@@ -177,7 +242,18 @@
           A.value = '';
           E.value = '';
 
-          textArea.value = "e |---3---|\nB |---3---|\nG |---0---|\nD |---0---|\nA |---2---|\nE |---3---|";
+          document.getElementById("sharp").disabled = false;
+          document.getElementById("flat").disabled = false;
+
+          if(sf.value == "sharp"){
+            textArea.value = "e |---4---|\nB |---4---|\nG |---5---|\nD |---6---|\nA |---6---|\nE |---4---|";
+          }
+          else if(sf.value == "flat"){
+            textArea.value = "e |---2---|\nB |---2---|\nG |---3---|\nD |---4---|\nA |---4---|\nE |---2---|";
+          }   
+          else{
+            textArea.value = "e |---3---|\nB |---3---|\nG |---0---|\nD |---0---|\nA |---2---|\nE |---3---|";
+          }
 
           break;
         case "Custom":
@@ -187,6 +263,11 @@
           D.disabled = false;
           A.disabled = false;
           E.disabled = false;
+
+          document.getElementById("sharp").disabled = true;
+          document.getElementById("flat").disabled = true;
+
+          sf.value = "";
 
           textArea.value = "e |------|\nB |------|\nG |------|\nD |------|\nA |------|\nE |------|";
 
@@ -326,8 +407,8 @@
               </select>
               <select class="ml-2" name="sharpflat" id="sharpflat" onchange="addchord()">
                 <option selected value>--</option>
-                <option value="sharp">&#x266f;</option>
-                <option value="flat">&#x266d;</option>
+                <option value="sharp" id="sharp">&#x266f;</option>
+                <option value="flat" id="flat">&#x266d;</option>
               </select>
           </div>
           <div class="row mt-2 ml-1">
