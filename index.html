@@ -39,7 +39,7 @@
           D.value = '';
           A.value = '';
           E.value = '';
-          
+
           break;
         case "A":
           e.disabled = true;
@@ -224,7 +224,7 @@
 
   <script>
     function copyToClipboard(){
-      let textarea = document.getElementById("tab");
+      var textarea = document.getElementById("tab");
       textarea.select();
       document.execCommand("copy");
       textarea.blur();
@@ -233,7 +233,10 @@
 
   <script>
     function copyChord(){
-
+      var textarea = document.getElementById("chorddisplay");
+      textarea.select();
+      document.execCommand("copy");
+      textarea.blur();
     }
   </script>
 
