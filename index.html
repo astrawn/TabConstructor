@@ -16,9 +16,10 @@
   </script>
 
   <script>
-    function addchord(chord){
+    function addchord(){
       var textArea = document.getElementById("chorddisplay");
       var sf = document.getElementById("sharpflat");
+      var chord = document.getElementById("chords").value;
       var e = document.getElementById("e-string");
       var B = document.getElementById("b-string");
       var G = document.getElementById("g-string");
@@ -312,7 +313,7 @@
           </div>
           <div class="row mt-2 ml-3">
               <label class="mr-2" for="chords">Chords:</label>
-              <select name="chords" id="chords" onchange="addchord(this.value)">
+              <select name="chords" id="chords" onchange="addchord()">
                 <option selected value>--</option>
                 <option value="A">A</option>
                 <option value="B">B</option>
@@ -323,7 +324,7 @@
                 <option value="G">G</option>
                 <option value="Custom">Custom</option>
               </select>
-              <select class="ml-2" name="sharpflat" id="sharpflat" onchange="">
+              <select class="ml-2" name="sharpflat" id="sharpflat" onchange="addchord()">
                 <option selected value>--</option>
                 <option value="sharp">&#x266f;</option>
                 <option value="flat">&#x266d;</option>
