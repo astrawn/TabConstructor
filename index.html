@@ -269,21 +269,23 @@
       var arrayOfLines = textArea.value.split("\n");
       var index = document.getElementById("tab").selectionStart;
       var end = document.getElementById("tab").value.length;
-
-      var text = document.getElementById("tab").value;
-      var newtext = text.substr(0, index) + arrayOfLines[0].charAt(6) + text.substr(index+1, end);
-      index = index + 96;
-      newtext = newtext.substr(0, index) + arrayOfLines[1].charAt(6) +newtext.substr(index+1, end);
-      index = index + 96;
-      newtext = newtext.substr(0, index) + arrayOfLines[2].charAt(6) +newtext.substr(index+1, end);
-      index = index + 96;
-      newtext = newtext.substr(0, index) + arrayOfLines[3].charAt(6) +newtext.substr(index+1, end);
-      index = index + 96;
-      newtext = newtext.substr(0, index) + arrayOfLines[4].charAt(6) +newtext.substr(index+1, end);
-      index = index + 96;
-      newtext = newtext.substr(0, index) + arrayOfLines[5].charAt(6) +newtext.substr(index+1, end);
-      document.getElementById("tab").value = newtext;
-      document.getElementById("tab").focus();
+      
+      if(document.getElementById("chords").value != ""){
+        var text = document.getElementById("tab").value;
+        var newtext = text.substr(0, index) + arrayOfLines[0].charAt(6) + text.substr(index+1, end);
+        index = index + 96;
+        newtext = newtext.substr(0, index) + arrayOfLines[1].charAt(6) +newtext.substr(index+1, end);
+        index = index + 96;
+        newtext = newtext.substr(0, index) + arrayOfLines[2].charAt(6) +newtext.substr(index+1, end);
+        index = index + 96;
+        newtext = newtext.substr(0, index) + arrayOfLines[3].charAt(6) +newtext.substr(index+1, end);
+        index = index + 96;
+        newtext = newtext.substr(0, index) + arrayOfLines[4].charAt(6) +newtext.substr(index+1, end);
+        index = index + 96;
+        newtext = newtext.substr(0, index) + arrayOfLines[5].charAt(6) +newtext.substr(index+1, end);
+        document.getElementById("tab").value = newtext;
+        document.getElementById("tab").focus();
+      }
 
     }
   </script>
