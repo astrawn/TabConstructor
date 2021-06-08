@@ -17,30 +17,149 @@
 
   <script>
     function addchord(chord){
+      var e = document.getElementById("e-string");
+      var B = document.getElementById("b-string");
+      var G = document.getElementById("g-string");
+      var D = document.getElementById("d-string");
+      var A = document.getElementById("a-string");
+      var E = document.getElementById("E-string");
+
       switch(chord){
+        case "--":
+          e.disabled = true;
+          B.disabled = true;
+          G.disabled = true;
+          D.disabled = true;
+          A.disabled = true;
+          E.disabled = true;
+
+          e.value = '';
+          B.value = '';
+          G.value = '';
+          D.value = '';
+          A.value = '';
+          E.value = '';
+          
+          break;
         case "A":
+          e.disabled = true;
+          B.disabled = true;
+          G.disabled = true;
+          D.disabled = true;
+          A.disabled = true;
+          E.disabled = true;
+
+          e.value = '';
+          B.value = '';
+          G.value = '';
+          D.value = '';
+          A.value = '';
+          E.value = '';
 
           break;
         case "B":
+          e.disabled = true;
+          B.disabled = true;
+          G.disabled = true;
+          D.disabled = true;
+          A.disabled = true;
+          E.disabled = true;
+
+          e.value = '';
+          B.value = '';
+          G.value = '';
+          D.value = '';
+          A.value = '';
+          E.value = '';
 
           break;
         case "C":
+          e.disabled = true;
+          B.disabled = true;
+          G.disabled = true;
+          D.disabled = true;
+          A.disabled = true;
+          E.disabled = true;
+
+          e.value = '';
+          B.value = '';
+          G.value = '';
+          D.value = '';
+          A.value = '';
+          E.value = '';
 
           break;
         case "D":
+          e.disabled = true;
+          B.disabled = true;
+          G.disabled = true;
+          D.disabled = true;
+          A.disabled = true;
+          E.disabled = true;
+
+          e.value = '';
+          B.value = '';
+          G.value = '';
+          D.value = '';
+          A.value = '';
+          E.value = '';
 
           break;
         case "E":
+          e.disabled = true;
+          B.disabled = true;
+          G.disabled = true;
+          D.disabled = true;
+          A.disabled = true;
+          E.disabled = true;
+
+          e.value = '';
+          B.value = '';
+          G.value = '';
+          D.value = '';
+          A.value = '';
+          E.value = '';
 
           break;
         case "F":
+          e.disabled = true;
+          B.disabled = true;
+          G.disabled = true;
+          D.disabled = true;
+          A.disabled = true;
+          E.disabled = true;
+
+          e.value = '';
+          B.value = '';
+          G.value = '';
+          D.value = '';
+          A.value = '';
+          E.value = '';
 
           break;
         case "G":
+          e.disabled = true;
+          B.disabled = true;
+          G.disabled = true;
+          D.disabled = true;
+          A.disabled = true;
+          E.disabled = true;
+
+          e.value = '';
+          B.value = '';
+          G.value = '';
+          D.value = '';
+          A.value = '';
+          E.value = '';
 
           break;
         case "Custom":
-
+          e.disabled = false;
+          B.disabled = false;
+          G.disabled = false;
+          D.disabled = false;
+          A.disabled = false;
+          E.disabled = false;
           break;
 
       }
@@ -164,7 +283,7 @@
           </div>
           <div class="row mt-2 ml-3">
               <label class="mr-2" for="chords">Chords:</label>
-              <select name="chords" id="chords" onchange="addchord()">
+              <select name="chords" id="chords" onchange="addchord(this.value)">
                 <option selected value>--</option>
                 <option value="A">A</option>
                 <option value="B">B</option>
