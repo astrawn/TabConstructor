@@ -17,6 +17,8 @@
 
   <script>
     function addchord(chord){
+      var textArea = document.getElementById("chorddisplay");
+      var sf = document.getElementById("sharpflat");
       var e = document.getElementById("e-string");
       var B = document.getElementById("b-string");
       var G = document.getElementById("g-string");
@@ -25,7 +27,7 @@
       var E = document.getElementById("E-string");
 
       switch(chord){
-        case "--":
+        case "":
           e.disabled = true;
           B.disabled = true;
           G.disabled = true;
@@ -39,6 +41,8 @@
           D.value = '';
           A.value = '';
           E.value = '';
+
+          textArea.value = "e |------|\nB |------|\nG |------|\nD |------|\nA |------|\nE |------|";          
 
           break;
         case "A":
@@ -56,6 +60,16 @@
           A.value = '';
           E.value = '';
 
+          if(sf.value == "sharp"){
+            textArea.value = "e |---6---|\nB |---6---|\nG |---7---|\nD |---8---|\nA |---8---|\nE |---6---|";
+          }
+          else if(sf.value == "flat"){
+            textArea.value = "e |---4---|\nB |---4---|\nG |---5---|\nD |---6---|\nA |---6---|\nE |---4---|";
+          }   
+          else{
+            textArea.value = "e |---0---|\nB |---2---|\nG |---2---|\nD |---2---|\nA |---0---|\nE |---x---|";
+          }
+
           break;
         case "B":
           e.disabled = true;
@@ -71,6 +85,8 @@
           D.value = '';
           A.value = '';
           E.value = '';
+
+          textArea.value = "e |---2---|\nB |---4---|\nG |---4---|\nD |---4---|\nA |---2---|\nE |---x---|";
 
           break;
         case "C":
@@ -88,6 +104,8 @@
           A.value = '';
           E.value = '';
 
+          textArea.value = "e |---0---|\nB |---1---|\nG |---0---|\nD |---2---|\nA |---3---|\nE |---x---|";
+
           break;
         case "D":
           e.disabled = true;
@@ -103,6 +121,8 @@
           D.value = '';
           A.value = '';
           E.value = '';
+
+          textArea.value = "e |---2---|\nB |---3---|\nG |---2---|\nD |---0---|\nA |---x---|\nE |---x---|";
 
           break;
         case "E":
@@ -120,6 +140,8 @@
           A.value = '';
           E.value = '';
 
+          textArea.value = "e |---0---|\nB |---0---|\nG |---1---|\nD |---2---|\nA |---2---|\nE |---0---|";
+
           break;
         case "F":
           e.disabled = true;
@@ -135,6 +157,8 @@
           D.value = '';
           A.value = '';
           E.value = '';
+
+          textArea.value = "e |---1---|\nB |---1---|\nG |---2---|\nD |---3---|\nA |---x---|\nE |---x---|";
 
           break;
         case "G":
@@ -152,6 +176,8 @@
           A.value = '';
           E.value = '';
 
+          textArea.value = "e |---3---|\nB |---3---|\nG |---0---|\nD |---0---|\nA |---2---|\nE |---3---|";
+
           break;
         case "Custom":
           e.disabled = false;
@@ -160,12 +186,12 @@
           D.disabled = false;
           A.disabled = false;
           E.disabled = false;
+
+          textArea.value = "e |------|\nB |------|\nG |------|\nD |------|\nA |------|\nE |------|";
+
           break;
-
       }
-
-    }
-      
+    }  
   </script>
   
 
@@ -248,17 +274,17 @@
       var end = document.getElementById("tab").value.length;
 
       var text = document.getElementById("tab").value;
-      var newtext = text.substr(0, index) + arrayOfLines[0].charAt(7) + text.substr(index+1, end);
-      index = index + 98;
-      newtext = newtext.substr(0, index) + arrayOfLines[1].charAt(7) +newtext.substr(index+1, end);
-      index = index + 98;
-      newtext = newtext.substr(0, index) + arrayOfLines[2].charAt(7) +newtext.substr(index+1, end);
-      index = index + 98;
-      newtext = newtext.substr(0, index) + arrayOfLines[3].charAt(7) +newtext.substr(index+1, end);
-      index = index + 98;
-      newtext = newtext.substr(0, index) + arrayOfLines[4].charAt(7) +newtext.substr(index+1, end);
-      index = index + 98;
-      newtext = newtext.substr(0, index) + arrayOfLines[5].charAt(7) +newtext.substr(index+1, end);
+      var newtext = text.substr(0, index) + arrayOfLines[0].charAt(6) + text.substr(index+1, end);
+      index = index + 96;
+      newtext = newtext.substr(0, index) + arrayOfLines[1].charAt(6) +newtext.substr(index+1, end);
+      index = index + 96;
+      newtext = newtext.substr(0, index) + arrayOfLines[2].charAt(6) +newtext.substr(index+1, end);
+      index = index + 96;
+      newtext = newtext.substr(0, index) + arrayOfLines[3].charAt(6) +newtext.substr(index+1, end);
+      index = index + 96;
+      newtext = newtext.substr(0, index) + arrayOfLines[4].charAt(6) +newtext.substr(index+1, end);
+      index = index + 96;
+      newtext = newtext.substr(0, index) + arrayOfLines[5].charAt(6) +newtext.substr(index+1, end);
       document.getElementById("tab").value = newtext;
       document.getElementById("tab").focus();
 
@@ -336,7 +362,7 @@
             </div>
             <div class="col-sm">
               <br><br>
-              <textarea readonly class="customtextarea2" id="chorddisplay" name="chorddisplay">e |----0---|&#013;&#010;B |----2---|&#013;&#010;G |----2---|&#013;&#010;D |----2---|&#013;&#010;A |----0---|&#013;&#010;E |----x---|</textarea>
+              <textarea readonly class="customtextarea2" id="chorddisplay" name="chorddisplay">e |---0---|&#013;&#010;B |---2---|&#013;&#010;G |---2---|&#013;&#010;D |---2---|&#013;&#010;A |---0---|&#013;&#010;E |---x---|</textarea>
               <br>
               <button class="btn-mybtn" id="cpchord" name="cpchord" style="width: 120px" onclick="copyChord()">Copy Chord</button>
               <br>
