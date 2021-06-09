@@ -16,8 +16,101 @@
   </script>
 
   <script>
-    function updateCustom(){
+    function updateCustom(string){
       
+      if (string != null){
+        if(string.value != "" && (parseInt(string.value) > "40" || parseInt(string.value) < "-1")){
+          return;
+        }
+      }
+
+      var e = document.getElementById("e-string").value;
+      var b = document.getElementById("b-string").value;
+      var g = document.getElementById("g-string").value;
+      var d = document.getElementById("d-string").value;
+      var a = document.getElementById("a-string").value;
+      var E = document.getElementById("E-string").value;
+      var enable = document.getElementById("enable-e").checked;
+      var bnable = document.getElementById("enable-b").checked;
+      var gnable = document.getElementById("enable-g").checked;
+      var dnable = document.getElementById("enable-d").checked;
+      var anable = document.getElementById("enable-a").checked;
+      var Enable = document.getElementById("enable-E").checked;
+
+      var dbl = 0;
+
+      if(e.length > 1 || b.length > 1 || g.length > 1 || d.length > 1 || a.length > 1 || E.length > 1){
+        dbl = 1;
+      }
+
+      if(enable == false){
+        e = "x";
+      }
+      else if (e == ""){
+        e = "0";
+      }
+
+      if (dbl == 1 && e.length == 1){
+        e = "-" + e;
+      }
+
+      if(bnable == false){
+        b = "x";
+      }
+      else if (b == ""){
+        b = "0";
+      }
+
+      if (dbl == 1 && b.length == 1){
+        b = "-" + b;
+      }
+
+      if(gnable == false){
+        g = "x";
+      }
+      else if (g == ""){
+        g = "0";
+      }
+      
+      if (dbl == 1 && g.length == 1){
+        g = "-" + g;
+      }
+
+      if(dnable == false){
+        d = "x";
+      }
+      else if (d == ""){
+        d = "0";
+      }
+
+      if (dbl == 1 && d.length == 1){
+        d = "-" + d;
+      }
+
+      if(anable == false){
+        a = "x";
+      }
+      else if (a == ""){
+        a = "0";
+      }
+
+      if (dbl == 1 && a.length == 1){
+        a = "-" + a;
+      }
+
+      if(Enable == false){
+        E = "x";
+      }
+      else if (E == ""){
+        E = "0";
+      }
+
+      if (dbl == 1 && E.length == 1){
+        E = "-" + E;
+      }
+
+      var text = "e |---" + e + "---|\nB |---" + b + "---|\nG |---" + g + "---|\nD |---" + d + "---|\nA |---" + a + "---|\nE |---" + E + "---|";
+      document.getElementById("chorddisplay").value = text;
     }
   </script>
 
@@ -183,8 +276,8 @@
           document.getElementById("enable-E").checked = true;
 
           sf.value = "";
-
-          textArea.value = "e |------|\nB |------|\nG |------|\nD |------|\nA |------|\nE |------|";
+          updateCustom();
+          //textArea.value = "e |------|\nB |------|\nG |------|\nD |------|\nA |------|\nE |------|";
 
           break;
       }
@@ -301,7 +394,7 @@
         E.disabled = true;
       }
 
-      updateCustom();
+      updateCustom(E);
     }
   </script>
 
@@ -316,7 +409,7 @@
         A.disabled = true;
       }
 
-      updateCustom();
+      updateCustom(A);
     }
   </script>
 
@@ -331,7 +424,7 @@
         D.disabled = true;
       }
 
-      updateCustom();
+      updateCustom(D);
     }
   </script>
 
@@ -346,7 +439,7 @@
         G.disabled = true;
       }
 
-      updateCustom();
+      updateCustom(G);
     }
   </script>
 
@@ -361,7 +454,7 @@
         B.disabled = true;
       }
 
-      updateCustom();
+      updateCustom(B);
     }
   </script>
 
@@ -376,11 +469,12 @@
         e.disabled = true;
       }
 
-      updateCustom();
+      updateCustom(e);
     }
   </script>
 </head>
 <body>
+  <!--START OF BODY-->
   <div class="banner jumbotron text-center">
     <h1><strong>TabConstructor</strong></h1>
     <h4>Tabs made easy!</h4>
@@ -423,27 +517,27 @@
               <label class="mr-2 ml-2" for="customizer">Customize:</label>
               <div class="mr-2 ml-4 mb-2" name="customizer" id="customizer">
                 <label class="mr-2" for="e-string">e:</label>
-                <input disabled class="custominput" type="number" max="40" min="0" name="e-string" id="e-string" onchange="updateCustom()"/>
+                <input disabled class="custominput" type="number" max="40" min="0" name="e-string" id="e-string" oninput="updateCustom(this)"/>
                 <input disabled type="checkbox" id="enable-e" name="enable-e" onclick="changeeCustom()">
                 <br>
                 <label class="mr-2" for="b-string">B:</label>
-                <input disabled class="custominput" type="number" max="40" min="0" name="b-string" id="b-string" onchange="updateCustom()"/>
+                <input disabled class="custominput" type="number" max="40" min="0" name="b-string" id="b-string" oninput="updateCustom(this)"/>
                 <input disabled type="checkbox" id="enable-b" name="enable-b" onclick="changeBCustom()">
                 <br>
                 <label class="mr-2" for="g-string">G:</label>
-                <input disabled class="custominput" type="number" max="40" min="0" name="g-string" id="g-string" onchange="updateCustom()"/>
+                <input disabled class="custominput" type="number" max="40" min="0" name="g-string" id="g-string" oninput="updateCustom(this)"/>
                 <input disabled type="checkbox" id="enable-g" name="enable-g" onclick="changeGCustom()">
                 <br>
                 <label class="mr-2" for="d-string">D:</label>
-                <input disabled class="custominput" type="number" max="40" min="0" name="d-string" id="d-string" onchange="updateCustom()"/>
+                <input disabled class="custominput" type="number" max="40" min="0" name="d-string" id="d-string" oninput="updateCustom(this)"/>
                 <input disabled type="checkbox" id="enable-d" name="enable-d" onclick="changeDCustom()">
                 <br>
                 <label class="mr-2" for="a-string">A:</label>
-                <input disabled class="custominput" type="number" max="40" min="0" name="a-string" id="a-string" onchange="updateCustom()"/>
+                <input disabled class="custominput" type="number" max="40" min="0" name="a-string" id="a-string" oninput="updateCustom(this)"/>
                 <input disabled type="checkbox" id="enable-a" name="enable-a" onclick="changeACustom()">
                 <br>
                 <label class="mr-2" for="E-string">E:</label>
-                <input disabled class="custominput" type="number" max="40" min="0" name="E-string" id="E-string" onchange="updateCustom()"/>
+                <input disabled class="custominput" type="number" max="40" min="0" name="E-string" id="E-string" oninput="updateCustom(this)"/>
                 <input disabled type="checkbox" id="enable-E" name="enable-E" onclick="changeECustom()">
               </div>
               <label class="mr-2 ml-2" for="chordoptions">Options:</label>
