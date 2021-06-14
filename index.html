@@ -496,7 +496,7 @@
       <div class="col-sm">
         <label class="customlabel" for="tab">Tab Sheet:</label>
         <!--onkeydown="keyPress(event)" oninput="insert(this.id)"-->
-        <textarea class="customtextarea" id="tab" name="tab" placeholder="e |-------------------------------------------------------------------------------------------|&#13;&#10;B |-------------------------------------------------------------------------------------------|&#13;&#10;G |-------------------------------------------------------------------------------------------|&#13;&#10;D |-------------------------------------------------------------------------------------------|&#13;&#10;A |-------------------------------------------------------------------------------------------|&#13;&#10;E |-------------------------------------------------------------------------------------------|&#13;&#10;"></textarea>
+        <textarea autocomplete="off" class="customtextarea" id="tab" name="tab" placeholder="e |-------------------------------------------------------------------------------------------|&#13;&#10;B |-------------------------------------------------------------------------------------------|&#13;&#10;G |-------------------------------------------------------------------------------------------|&#13;&#10;D |-------------------------------------------------------------------------------------------|&#13;&#10;A |-------------------------------------------------------------------------------------------|&#13;&#10;E |-------------------------------------------------------------------------------------------|&#13;&#10;"></textarea>
         <br>
       </div>
       <div class="col-sm">
@@ -506,7 +506,7 @@
           </div>
           <div class="row mt-2 ml-3">
               <label class="mr-2" for="chords">Chords:</label>
-              <select name="chords" id="chords" onchange="addchord()">
+              <select autocomplete="off" name="chords" id="chords" onchange="addchord()">
                 <option selected value>--</option>
                 <option value="A">A</option>
                 <option value="B">B</option>
@@ -528,33 +528,33 @@
               <label class="mr-2 ml-2" for="customizer">Customize:</label>
               <div class="mr-2 ml-4 mb-2" name="customizer" id="customizer">
                 <label class="mr-2" for="e-string">e:</label>
-                <input disabled class="custominput" type="number" max="40" min="0" name="e-string" id="e-string" oninput="updateCustom(this)"/>
-                <input disabled type="checkbox" id="enable-e" name="enable-e" onclick="changeeCustom()">
+                <input autocomplete="off" disabled class="custominput" type="number" max="40" min="0" name="e-string" id="e-string" oninput="updateCustom(this)"/>
+                <input autocomplete="off" disabled type="checkbox" id="enable-e" name="enable-e" onclick="changeeCustom()">
                 <br>
                 <label class="mr-2" for="b-string">B:</label>
-                <input disabled class="custominput" type="number" max="40" min="0" name="b-string" id="b-string" oninput="updateCustom(this)"/>
-                <input disabled type="checkbox" id="enable-b" name="enable-b" onclick="changeBCustom()">
+                <input autocomplete="off" disabled class="custominput" type="number" max="40" min="0" name="b-string" id="b-string" oninput="updateCustom(this)"/>
+                <input autocomplete="off" disabled type="checkbox" id="enable-b" name="enable-b" onclick="changeBCustom()">
                 <br>
                 <label class="mr-2" for="g-string">G:</label>
-                <input disabled class="custominput" type="number" max="40" min="0" name="g-string" id="g-string" oninput="updateCustom(this)"/>
-                <input disabled type="checkbox" id="enable-g" name="enable-g" onclick="changeGCustom()">
+                <input autocomplete="off" disabled class="custominput" type="number" max="40" min="0" name="g-string" id="g-string" oninput="updateCustom(this)"/>
+                <input autocomplete="off" disabled type="checkbox" id="enable-g" name="enable-g" onclick="changeGCustom()">
                 <br>
                 <label class="mr-2" for="d-string">D:</label>
-                <input disabled class="custominput" type="number" max="40" min="0" name="d-string" id="d-string" oninput="updateCustom(this)"/>
-                <input disabled type="checkbox" id="enable-d" name="enable-d" onclick="changeDCustom()">
+                <input autocomplete="off" disabled class="custominput" type="number" max="40" min="0" name="d-string" id="d-string" oninput="updateCustom(this)"/>
+                <input autocomplete="off" disabled type="checkbox" id="enable-d" name="enable-d" onclick="changeDCustom()">
                 <br>
                 <label class="mr-2" for="a-string">A:</label>
-                <input disabled class="custominput" type="number" max="40" min="0" name="a-string" id="a-string" oninput="updateCustom(this)"/>
-                <input disabled type="checkbox" id="enable-a" name="enable-a" onclick="changeACustom()">
+                <input autocomplete="off" disabled class="custominput" type="number" max="40" min="0" name="a-string" id="a-string" oninput="updateCustom(this)"/>
+                <input autocomplete="off" disabled type="checkbox" id="enable-a" name="enable-a" onclick="changeACustom()">
                 <br>
                 <label class="mr-2" for="E-string">E:</label>
-                <input disabled class="custominput" type="number" max="40" min="0" name="E-string" id="E-string" oninput="updateCustom(this)"/>
-                <input disabled type="checkbox" id="enable-E" name="enable-E" onclick="changeECustom()">
+                <input autocomplete="off" disabled class="custominput" type="number" max="40" min="0" name="E-string" id="E-string" oninput="updateCustom(this)"/>
+                <input autocomplete="off" disabled type="checkbox" id="enable-E" name="enable-E" onclick="changeECustom()">
               </div>
               <label class="mr-2 ml-2" for="chordoptions">Options:</label>
               <div class="mr-2 ml-4" name="chordoptions" id="chordoptions">
                 <label class="mr-2" for="chordformat">Format:</label>
-                <select name="chordformat" id="chordformat" onchange="updateCustom()">
+                <select autocomplete="off" name="chordformat" id="chordformat" onchange="updateCustom()">
                   <option selected value="Full">Full</option>
                   <option value="Inner">Inner</option>
                   <option value="Minimal">Minimal</option>
@@ -563,7 +563,7 @@
             </div>
             <div class="col-sm">
               <br><br>
-              <textarea readonly class="customtextarea2" id="chorddisplay" name="chorddisplay">e |---0---|&#013;&#010;B |---2---|&#013;&#010;G |---2---|&#013;&#010;D |---2---|&#013;&#010;A |---0---|&#013;&#010;E |---x---|</textarea>
+              <textarea autocomplete="off" readonly class="customtextarea2" id="chorddisplay" name="chorddisplay">e |------|&#013;&#010;B |------|&#013;&#010;G |------|&#013;&#010;D |------|&#013;&#010;A |------|&#013;&#010;E |------|</textarea>
               <br>
               <button class="btn-mybtn" id="cpchord" name="cpchord" style="width: 120px" onclick="copyChord()">Copy Chord</button>
               <br>
