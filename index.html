@@ -110,16 +110,7 @@
       }
 
       var format = document.getElementById("chordformat").value;
-      var text = "";
-      if(format == "Full"){
-        text = "e |---" + e + "---|\nB |---" + b + "---|\nG |---" + g + "---|\nD |---" + d + "---|\nA |---" + a + "---|\nE |---" + E + "---|";
-      }
-      else if (format == "Inner"){
-        text = "    --" + e + "--\n    --" + b + "--\n    --" + g + "--\n    --" + d + "--\n    --" + a + "--\n    --" + E + "--";
-      }
-      else if (format == "Minimal"){
-        text = "      " + e + "\n      " + b + "\n      " + g + "\n      " + d + "\n      " + a + "\n      " + E;
-      }
+      var text = "e |---" + e + "---|\nB |---" + b + "---|\nG |---" + g + "---|\nD |---" + d + "---|\nA |---" + a + "---|\nE |---" + E + "---|";
 
       document.getElementById("chorddisplay").value = text;
     }
@@ -556,15 +547,6 @@
                 <label class="mr-2" for="E-string">E:</label>
                 <input autocomplete="off" disabled class="custominput" type="number" max="40" min="0" name="E-string" id="E-string" oninput="updateCustom(this)"/>
                 <input autocomplete="off" disabled type="checkbox" id="enable-E" name="enable-E" onclick="changeECustom()">
-              </div>
-              <label class="mr-2 ml-2" for="chordoptions">Options:</label>
-              <div class="mr-2 ml-4" name="chordoptions" id="chordoptions">
-                <label class="mr-2" for="chordformat">Format:</label>
-                <select autocomplete="off" name="chordformat" id="chordformat" onchange="updateCustom()">
-                  <option selected value="Full">Full</option>
-                  <option value="Inner">Inner</option>
-                  <option value="Minimal">Minimal</option>
-                </select>
               </div>
             </div>
             <div class="col-sm">
