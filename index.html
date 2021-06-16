@@ -109,7 +109,6 @@
         E = "-" + E;
       }
 
-      var format = document.getElementById("chordformat").value;
       var text = "e |---" + e + "---|\nB |---" + b + "---|\nG |---" + g + "---|\nD |---" + d + "---|\nA |---" + a + "---|\nE |---" + E + "---|";
 
       document.getElementById("chorddisplay").value = text;
@@ -474,6 +473,24 @@
       updateCustom(e);
     }
   </script>
+
+  <script>
+    function addChordToTab(){
+      var textArea = document.getElementById("tabchords");
+      var chord = document.getElementById("chorddisplay").value;
+      var name = "A"; //getChordName();
+      var arrayOfLines = textArea.value.split("\n");
+      var chordLines = chord.split("\n");
+
+      textArea.value = "      " + name + "   \n" + chord;
+    }
+  </script>
+
+  <script>
+    function getChordName(){
+
+    }
+  </script>
 </head>
 <body>
   <!--START OF BODY-->
@@ -484,13 +501,55 @@
   
   <div class="customcontainer1">
     <div class="row">
-      <div class="col-sm">
-        <label class="customlabel" for="tabchords">Tab Chords:</label>
-        <textarea autocomplete="off" class="customtextarea3 mb-3" id="tabchords" name="tabchords" placeholder="      A    &#13;&#10;e |---0---|&#13;&#10;B |---2---|&#13;&#10;G |---2---|&#13;&#10;D |---2---|&#13;&#10;A |---0---|&#13;&#10;E |---x---|"></textarea>
+      <div class="col-lg-9 col-md-12 col-sm-12">
+        <label class="customlabel" for="tabchords1">Tab Chords:</label>
+        <div class="row">
+          <div class="col-sm-2">
+            <textarea autocomplete="off" class="customtextarea3 mb-1" id="tabchords1" name="tabchords1" placeholder="      A    &#13;&#10;e |---0---|&#13;&#10;B |---2---|&#13;&#10;G |---2---|&#13;&#10;D |---2---|&#13;&#10;A |---0---|&#13;&#10;E |---x---|"></textarea>
+            <button class="btn-mybtn ml-4 mb-1" id="rmchord1" name="rmchord1" onclick="removeChord()">Remove</button>
+          </div>
+          <div class="col-sm-2">
+            <textarea  autocomplete="off" class="customtextarea3 mb-1" id="tabchords2" name="tabchords2" placeholder="      A    &#13;&#10;e |---0---|&#13;&#10;B |---2---|&#13;&#10;G |---2---|&#13;&#10;D |---2---|&#13;&#10;A |---0---|&#13;&#10;E |---x---|"></textarea>
+            <button class="btn-mybtn ml-4 mb-1" id="rmchord2" name="rmchord2" onclick="removeChord()">Remove</button>
+          </div>
+          <div class="col-sm-2">
+            <textarea autocomplete="off" class="customtextarea3 mb-1" id="tabchords3" name="tabchords3" placeholder="      A    &#13;&#10;e |---0---|&#13;&#10;B |---2---|&#13;&#10;G |---2---|&#13;&#10;D |---2---|&#13;&#10;A |---0---|&#13;&#10;E |---x---|"></textarea>
+            <button class="btn-mybtn ml-4 mb-1" id="rmchord3" name="rmchord3" onclick="removeChord()">Remove</button>
+          </div>
+          <div class="col-sm-2">
+            <textarea autocomplete="off" class="customtextarea3 mb-1" id="tabchords4" name="tabchords4" placeholder="      A    &#13;&#10;e |---0---|&#13;&#10;B |---2---|&#13;&#10;G |---2---|&#13;&#10;D |---2---|&#13;&#10;A |---0---|&#13;&#10;E |---x---|"></textarea>
+            <button class="btn-mybtn ml-4 mb-1" id="rmchord4" name="rmchord4" onclick="removeChord()">Remove</button>
+          </div>
+          <div class="col-sm-2">
+            <textarea autocomplete="off" class="customtextarea3 mb-1" id="tabchords5" name="tabchords5" placeholder="      A    &#13;&#10;e |---0---|&#13;&#10;B |---2---|&#13;&#10;G |---2---|&#13;&#10;D |---2---|&#13;&#10;A |---0---|&#13;&#10;E |---x---|"></textarea>
+            <button class="btn-mybtn ml-4 mb-1" id="rmchord5" name="rmchord5" onclick="removeChord()">Remove</button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm">
+            <textarea hidden autocomplete="off" class="customtextarea3 mb-1" id="tabchords6" name="tabchords6" placeholder="      A    &#13;&#10;e |---0---|&#13;&#10;B |---2---|&#13;&#10;G |---2---|&#13;&#10;D |---2---|&#13;&#10;A |---0---|&#13;&#10;E |---x---|"></textarea>
+            <button hidden class="btn-mybtn ml-4 mb-1" id="rmchord6" name="rmchord6" onclick="removeChord()">Remove</button>
+          </div>
+          <div class="col-sm">
+            <textarea hidden autocomplete="off" class="customtextarea3 mb-1" id="tabchords7" name="tabchords7" placeholder="      A    &#13;&#10;e |---0---|&#13;&#10;B |---2---|&#13;&#10;G |---2---|&#13;&#10;D |---2---|&#13;&#10;A |---0---|&#13;&#10;E |---x---|"></textarea>
+            <button hidden class="btn-mybtn ml-4 mb-1" id="rmchord7" name="rmchord7" onclick="removeChord()">Remove</button>
+          </div>
+          <div class="col-sm">
+            <textarea hidden autocomplete="off" class="customtextarea3 mb-1" id="tabchords8" name="tabchords8" placeholder="      A    &#13;&#10;e |---0---|&#13;&#10;B |---2---|&#13;&#10;G |---2---|&#13;&#10;D |---2---|&#13;&#10;A |---0---|&#13;&#10;E |---x---|"></textarea>
+            <button hidden class="btn-mybtn ml-4 mb-1" id="rmchord8" name="rmchord8" onclick="removeChord()">Remove</button>
+          </div>
+          <div class="col-sm">
+            <textarea hidden autocomplete="off" class="customtextarea3 mb-1" id="tabchords9" name="tabchords9" placeholder="      A    &#13;&#10;e |---0---|&#13;&#10;B |---2---|&#13;&#10;G |---2---|&#13;&#10;D |---2---|&#13;&#10;A |---0---|&#13;&#10;E |---x---|"></textarea>
+            <button hidden class="btn-mybtn ml-4 mb-1" id="rmchord9" name="rmchord9" onclick="removeChord()">Remove</button>
+          </div>
+          <div class="col-sm">
+            <textarea hidden autocomplete="off" class="customtextarea3 mb-1" id="tabchords10" name="tabchords10" placeholder="      A    &#13;&#10;e |---0---|&#13;&#10;B |---2---|&#13;&#10;G |---2---|&#13;&#10;D |---2---|&#13;&#10;A |---0---|&#13;&#10;E |---x---|"></textarea>
+            <button hidden class="btn-mybtn ml-4 mb-1" id="rmchord10" name="rmchord10" onclick="removeChord()">Remove</button>
+          </div>
       </div>
     </div>
     <div class="row">
-      <div class="col-sm">
+      <div class="col-sm ml-3">
         <label class="customlabel" for="tab">Tab Sheet:</label>
         <!--onkeydown="keyPress(event)" oninput="insert(this.id)"-->
         <textarea autocomplete="off" class="customtextarea" id="tab" name="tab" placeholder="e |-------------------------------------------------------------------------------------------|&#13;&#10;B |-------------------------------------------------------------------------------------------|&#13;&#10;G |-------------------------------------------------------------------------------------------|&#13;&#10;D |-------------------------------------------------------------------------------------------|&#13;&#10;A |-------------------------------------------------------------------------------------------|&#13;&#10;E |-------------------------------------------------------------------------------------------|&#13;&#10;"></textarea>

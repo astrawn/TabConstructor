@@ -34,7 +34,7 @@
 .customtextarea3 {
   resize: none;
   display: block;
-  width: 800px;
+  width: 130px;
   height: 175px;
   font-family: 'Courier New', Courier, monospace;
   font-size: 0.8em;
@@ -67,7 +67,7 @@
   margin-left: 0 !important;
   margin-top: 32px;
   border: 1px solid #8f8f8f;
-  width: 100%;
+  width: 110%;
 }
 
 .customcontainer2.row{
