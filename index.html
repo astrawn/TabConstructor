@@ -651,6 +651,104 @@
   <script>
     function collapseChord(chord){
 
+      var chord1 = document.getElementById("tabchords1");
+      var chord2 = document.getElementById("tabchords2");
+      var chord3 = document.getElementById("tabchords3");
+      var chord4 = document.getElementById("tabchords4");
+      var chord5 = document.getElementById("tabchords5");
+      var chord6 = document.getElementById("tabchords6");
+      var chord7 = document.getElementById("tabchords7");
+      var chord8 = document.getElementById("tabchords8");
+      var chord9 = document.getElementById("tabchords9");
+      var chord10 = document.getElementById("tabchords10");
+      let chords = [0,0,0,0,0,0,0,0,0,0];
+      var i = 0;
+
+      if (chord1.value != ""){
+        chords[0] = 1;
+      }
+
+      if (chord2.value != ""){
+        chords[1] = 1;
+      }
+
+      if(chord3.value != ""){
+        chords[2] = 1;
+      }
+
+      if (chords4.value != ""){
+        chords[3] = 1;
+      }
+
+      if (chords5.value != ""){
+        chords[4] = 1;
+      }
+
+      if (chords6.value != ""){
+        chords[5] = 1;
+      }
+
+      if (chords7.value != ""){
+        chords[6] = 1;
+      }
+
+      if (chords8.value != ""){
+        chords[7] = 1;
+      }
+
+      if (chords9.value != ""){
+        chords[8] = 1;
+      }
+
+      if (chords10.value != ""){
+        chords[9] = 1;
+      }
+
+      switch(chord){
+        case 1:
+          chords[0] = 0;
+          break;
+        case 2:
+          chords[1] = 0;
+          i = 1;
+          break;
+        case 3:
+          chords[2] = 0;
+          i = 2;
+          break;
+        case 4:
+          chords[3] = 0;
+          i = 3;
+          break;
+        case 5:
+          chords[4] = 0;
+          i = 4;
+          break;
+        case 6:
+          chords[5] = 0;
+          i = 5;
+          break;
+        case 7:
+          chords[6] = 0;
+          i = 6;
+          break;
+        case 8:
+          chords[7] = 0;
+          i = 7;
+          break;
+        case 9:
+          chords[8] = 0;
+          i = 8;
+          break;
+        case 10:
+          chords[9] = 0;
+          i = 9;
+          break;
+      }
+
+      
+
+
     }
   </script>
 </head>
