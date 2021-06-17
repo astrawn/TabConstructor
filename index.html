@@ -476,11 +476,89 @@
 
   <script>
     function addChordToTab(){
-      var textArea = document.getElementById("tabchords");
+      var chord1 = document.getElementById("tabchords1");
+      var chord2 = document.getElementById("tabchords2");
+      var chord3 = document.getElementById("tabchords3");
+      var chord4 = document.getElementById("tabchords4");
+      var chord5 = document.getElementById("tabchords5");
+      var chord6 = document.getElementById("tabchords6");
+      var chord7 = document.getElementById("tabchords7");
+      var chord8 = document.getElementById("tabchords8");
+      var chord9 = document.getElementById("tabchords9");
+      var chord10 = document.getElementById("tabchords10");
       var chord = document.getElementById("chorddisplay").value;
       var name = "A"; //getChordName();
 
-      
+      if (chord1.value == ""){
+        chord1.value = chord;
+        chord1.hidden = false;
+        document.getElementById("chord1label").value = name;
+        document.getElementById("chord1label").hidden = false;
+        document.getElementById("rmchord1").hidden = false;
+      }
+      else if (chord2.value == ""){
+        chord2.value = chord;
+        chord2.hidden = false;
+        document.getElementById("chord2label").value = name;
+        document.getElementById("chord2label").hidden = false;
+        document.getElementById("rmchord2").hidden = false;
+      }
+      else if (chord3.value == ""){
+        chord3.value = chord;
+        chord3.hidden = false;
+        document.getElementById("chord3label").value = name;
+        document.getElementById("chord3label").hidden = false;
+        document.getElementById("rmchord3").hidden = false;
+      }
+      else if (chord4.value == ""){
+        chord4.value = chord;
+        chord4.hidden = false;
+        document.getElementById("chord4label").value = name;
+        document.getElementById("chord4label").hidden = false;
+        document.getElementById("rmchord4").hidden = false;
+      }
+      else if (chord5.value == ""){
+        chord5.value = chord;
+        chord5.hidden = false;
+        document.getElementById("chord5label").value = name;
+        document.getElementById("chord5label").hidden = false;
+        document.getElementById("rmchord5").hidden = false;
+      }
+      else if (chord6.value == ""){
+        chord6.value = chord;
+        chord6.hidden = false;
+        document.getElementById("chord6label").value = name;
+        document.getElementById("chord6label").hidden = false;
+        document.getElementById("rmchord6").hidden = false;
+      }
+      else if (chord7.value == ""){
+        chord7.value = chord;
+        chord7.hidden = false;
+        document.getElementById("chord7label").value = name;
+        document.getElementById("chord7label").hidden = false;
+        document.getElementById("rmchord7").hidden = false;
+      }
+      else if (chord8.value == ""){
+        chord8.value = chord;
+        chord8.hidden = false;
+        document.getElementById("chord8label").value = name;
+        document.getElementById("chord8label").hidden = false;
+        document.getElementById("rmchord8").hidden = false;
+      }
+      else if (chord9.value == ""){
+        chord9.value = chord;
+        chord9.hidden = false;
+        document.getElementById("chord9label").value = name;
+        document.getElementById("chord9label").hidden = false;
+        document.getElementById("rmchord9").hidden = false;
+      }
+      else if (chord10.value == ""){
+        chord10.value = chord;
+        chord10.hidden = false;
+        document.getElementById("chord10label").value = name;
+        document.getElementById("chord10label").hidden = false;
+        document.getElementById("rmchord10").hidden = false;
+      }
 
     }
   </script>
@@ -492,7 +570,86 @@
   </script>
 
   <script>
-    function removeChord(){
+    function removeChord(chord){
+      chord.hidden = true;
+
+      switch(chord.id){
+        case "rmchord1":
+          document.getElementById("tabchords1").value = "";
+          document.getElementById("tabchords1").hidden = true;
+          document.getElementById("chord1label").value = "";
+          document.getElementById("chord1label").hidden = true;
+          collapseChord(1);
+          break;
+        case "rmchord2":
+          document.getElementById("tabchords2").value = "";
+          document.getElementById("tabchords2").hidden = true;
+          document.getElementById("chord2label").value = "";
+          document.getElementById("chord2label").hidden = true;
+          collapseChord(2);
+          break;
+        case "rmchord3":
+          document.getElementById("tabchords3").value = "";
+          document.getElementById("tabchords3").hidden = true;
+          document.getElementById("chord3label").value = "";
+          document.getElementById("chord3label").hidden = true;
+          collapseChord(3);
+          break;
+        case "rmchord4":
+          document.getElementById("tabchords4").value = "";
+          document.getElementById("tabchords4").hidden = true;
+          document.getElementById("chord4label").value = "";
+          document.getElementById("chord4label").hidden = true;
+          collapseChord(4);
+          break;
+        case "rmchord5":
+          document.getElementById("tabchords5").value = "";
+          document.getElementById("tabchords5").hidden = true;
+          document.getElementById("chord5label").value = "";
+          document.getElementById("chord5label").hidden = true;
+          collapseChord(5);
+          break;
+        case "rmchord6":
+          document.getElementById("tabchords6").value = "";
+          document.getElementById("tabchords6").hidden = true;
+          document.getElementById("chord6label").value = "";
+          document.getElementById("chord6label").hidden = true;
+          collapseChord(6);
+          break;
+        case "rmchord7":
+          document.getElementById("tabchords7").value = "";
+          document.getElementById("tabchords7").hidden = true;
+          document.getElementById("chord7label").value = "";
+          document.getElementById("chord7label").hidden = true;
+          collapseChord(7);
+          break;
+        case "rmchord8":
+          document.getElementById("tabchords8").value = "";
+          document.getElementById("tabchords8").hidden = true;
+          document.getElementById("chord8label").value = "";
+          document.getElementById("chord8label").hidden = true;
+          collapseChord(8);
+          break;
+        case "rmchord9":
+          document.getElementById("tabchords9").value = "";
+          document.getElementById("tabchords9").hidden = true;
+          document.getElementById("chord9label").value = "";
+          document.getElementById("chord9label").hidden = true;
+          collapseChord(9);
+          break;
+        case "rmchord10":
+          document.getElementById("tabchords10").value = "";
+          document.getElementById("tabchords10").hidden = true;
+          document.getElementById("chord10label").value = "";
+          document.getElementById("chord10label").hidden = true;
+          collapseChord(10);
+          break;
+      }
+    }
+  </script>
+
+  <script>
+    function collapseChord(chord){
 
     }
   </script>
@@ -512,54 +669,54 @@
           <div class="col-sm-2">
             <center><label class="customlabel" for="tabchords1" id="chord1label">A</label></center>
             <textarea autocomplete="off" class="customtextarea3 mb-1" id="tabchords1" name="tabchords1" placeholder="e |---0---|&#13;&#10;B |---2---|&#13;&#10;G |---2---|&#13;&#10;D |---2---|&#13;&#10;A |---0---|&#13;&#10;E |---x---|"></textarea>
-            <button class="btn-mybtn ml-4 mb-1" id="rmchord1" name="rmchord1" onclick="removeChord()">Remove</button>
+            <button class="btn-mybtn ml-4 mb-1" id="rmchord1" name="rmchord1" onclick="removeChord(this)">Remove</button>
           </div>
           <div class="col-sm-2">
             <center><label hidden class="customlabel" for="tabchords2" id="chord2label">A</label></center>
             <textarea hidden autocomplete="off" class="customtextarea3 mb-1" id="tabchords2" name="tabchords2"></textarea>
-            <button hidden class="btn-mybtn ml-4 mb-1" id="rmchord2" name="rmchord2" onclick="removeChord()">Remove</button>
+            <button hidden class="btn-mybtn ml-4 mb-1" id="rmchord2" name="rmchord2" onclick="removeChord(this)">Remove</button>
           </div>
           <div class="col-sm-2">
             <center><label hidden class="customlabel" for="tabchords3" id="chord3label">A</label></center>
             <textarea hidden autocomplete="off" class="customtextarea3 mb-1" id="tabchords3" name="tabchords3"></textarea>
-            <button hidden class="btn-mybtn ml-4 mb-1" id="rmchord3" name="rmchord3" onclick="removeChord()">Remove</button>
+            <button hidden class="btn-mybtn ml-4 mb-1" id="rmchord3" name="rmchord3" onclick="removeChord(this)">Remove</button>
           </div>
           <div class="col-sm-2">
             <center><label hidden class="customlabel" for="tabchords4" id="chord4label">A</label></center>
             <textarea hidden autocomplete="off" class="customtextarea3 mb-1" id="tabchords4" name="tabchords4"></textarea>
-            <button hidden class="btn-mybtn ml-4 mb-1" id="rmchord4" name="rmchord4" onclick="removeChord()">Remove</button>
+            <button hidden class="btn-mybtn ml-4 mb-1" id="rmchord4" name="rmchord4" onclick="removeChord(this)">Remove</button>
           </div>
           <div class="col-sm-2">
             <center><label hidden class="customlabel" for="tabchords5" id="chord5label">A</label></center>
             <textarea hidden autocomplete="off" class="customtextarea3 mb-1" id="tabchords5" name="tabchords5"></textarea>
-            <button hidden class="btn-mybtn ml-4 mb-1" id="rmchord5" name="rmchord5" onclick="removeChord()">Remove</button>
+            <button hidden class="btn-mybtn ml-4 mb-1" id="rmchord5" name="rmchord5" onclick="removeChord(this)">Remove</button>
           </div>
         </div>
-        <div class="row">
-          <div class="col-sm">
+        <div class="row mb-1">
+          <div class="col-sm-2">
             <center><label hidden class="customlabel" for="tabchords6" id="chord6label">A</label></center>
             <textarea hidden autocomplete="off" class="customtextarea3 mb-1" id="tabchords6" name="tabchords6"></textarea>
-            <button hidden class="btn-mybtn ml-4 mb-1" id="rmchord6" name="rmchord6" onclick="removeChord()">Remove</button>
+            <button hidden class="btn-mybtn ml-4 mb-1" id="rmchord6" name="rmchord6" onclick="removeChord(this)">Remove</button>
           </div>
-          <div class="col-sm">
+          <div class="col-sm-2">
             <center><label hidden class="customlabel" for="tabchords7" id="chord7label">A</label></center>
             <textarea hidden autocomplete="off" class="customtextarea3 mb-1" id="tabchords7" name="tabchords7"></textarea>
-            <button hidden class="btn-mybtn ml-4 mb-1" id="rmchord7" name="rmchord7" onclick="removeChord()">Remove</button>
+            <button hidden class="btn-mybtn ml-4 mb-1" id="rmchord7" name="rmchord7" onclick="removeChord(this)">Remove</button>
           </div>
-          <div class="col-sm">
+          <div class="col-sm-2">
             <center><label hidden class="customlabel" for="tabchords8" id="chord8label">A</label></center>
             <textarea hidden autocomplete="off" class="customtextarea3 mb-1" id="tabchords8" name="tabchords8"></textarea>
-            <button hidden class="btn-mybtn ml-4 mb-1" id="rmchord8" name="rmchord8" onclick="removeChord()">Remove</button>
+            <button hidden class="btn-mybtn ml-4 mb-1" id="rmchord8" name="rmchord8" onclick="removeChord(this)">Remove</button>
           </div>
-          <div class="col-sm">
+          <div class="col-sm-2">
             <center><label hidden class="customlabel" for="tabchords9" id="chord9label">A</label></center>
             <textarea hidden autocomplete="off" class="customtextarea3 mb-1" id="tabchords9" name="tabchords9"></textarea>
-            <button hidden class="btn-mybtn ml-4 mb-1" id="rmchord9" name="rmchord9" onclick="removeChord()">Remove</button>
+            <button hidden class="btn-mybtn ml-4 mb-1" id="rmchord9" name="rmchord9" onclick="removeChord(this)">Remove</button>
           </div>
-          <div class="col-sm">
+          <div class="col-sm-2">
             <center><label hidden class="customlabel" for="tabchords10" id="chord10label">A</label></center>
             <textarea hidden autocomplete="off" class="customtextarea3 mb-1" id="tabchords10" name="tabchords10"></textarea>
-            <button hidden class="btn-mybtn ml-4 mb-1" id="rmchord10" name="rmchord10" onclick="removeChord()">Remove</button>
+            <button hidden class="btn-mybtn ml-4 mb-1" id="rmchord10" name="rmchord10" onclick="removeChord(this)">Remove</button>
           </div>
       </div>
     </div>
@@ -574,6 +731,7 @@
         <div class="customcontainer2">
           <div class="row mt-2 ml-3">
             <button class="btn-mybtn" onClick="addbar()">Add Bar</button>
+            <button class="btn-mybtn ml-2" id="addtotab" name="addtotab" onclick="addChordToTab()">Add Chord to Tab</button>
           </div>
           <div class="row mt-2 ml-3">
               <label class="mr-2" for="chords">Chords:</label>
@@ -630,8 +788,6 @@
               <button class="btn-mybtn" id="cpchord" name="cpchord" style="width: 130px" onclick="copyChord()">Copy Chord</button>
               <br>
               <button class="btn-mybtn mt-2" id="insertchord" name="insertchord" style="width: 130px" onclick="insertChord()">Insert Chord</button>
-              <br>
-              <button class="btn-mybtn mt-2" id="addtotab" name="addtotab" style="width: 130px" onclick="addChordToTab()">Add Chord to Tab</button>
             </div>
           </div>
           <div class="row mt-4 ml-3 mb-2">
