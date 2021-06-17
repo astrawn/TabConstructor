@@ -486,6 +486,8 @@
       var chord8 = document.getElementById("tabchords8");
       var chord9 = document.getElementById("tabchords9");
       var chord10 = document.getElementById("tabchords10");
+      var chord11 = document.getElementById("tabchords11");
+      var chord12 = document.getElementById("tabchords12");
       var chord = document.getElementById("chorddisplay").value;
       var name = "A"; //getChordName();
 
@@ -538,6 +540,16 @@
         chord10.value = chord;
         document.getElementById("chord10div").style.display = "block";
         document.getElementById("chord10label").value = name;
+      }
+      else if (chord11.value == ""){
+        chord11.value = chord;
+        document.getElementById("chord11div").style.display = "block";
+        document.getElementById("chord11label").value = name;
+      }
+      else if (chord12.value == ""){
+        chord12.value = chord;
+        document.getElementById("chord12div").style.display = "block";
+        document.getElementById("chord12label").value = name;
       }
     }
   </script>
@@ -602,6 +614,16 @@
           document.getElementById("tabchords10").value = "";
           document.getElementById("chord10label").value = "";
           break;
+        case "rmchord11":
+          document.getElementById("chord11div").style.display = "none";
+          document.getElementById("tabchords11").value = "";
+          document.getElementById("chord11label").value = "";
+          break;
+        case "rmchord12":
+          document.getElementById("chord12div").style.display = "none";
+          document.getElementById("tabchords12").value = "";
+          document.getElementById("chord12label").value = "";
+          break;
       }
     }
   </script>
@@ -617,7 +639,7 @@
     <div class="row">
       <div class="col-lg-9 col-md-12 col-sm-12">
         <label class="customlabel" for="tabchords1">Tab Chords:</label>
-        <div class="row">
+        <div class="row mb-4">
           <div class="col-sm-2" id="chord1div">
             <center><label class="customlabel" for="tabchords1" id="chord1label">A</label></center>
             <textarea autocomplete="off" class="customtextarea3 mb-1" id="tabchords1" name="tabchords1" placeholder="e |---0---|&#13;&#10;B |---2---|&#13;&#10;G |---2---|&#13;&#10;D |---2---|&#13;&#10;A |---0---|&#13;&#10;E |---x---|"></textarea>
@@ -643,8 +665,6 @@
             <textarea autocomplete="off" class="customtextarea3 mb-1" id="tabchords5" name="tabchords5"></textarea>
             <button class="btn-mybtn ml-4 mb-1" id="rmchord5" name="rmchord5" onclick="removeChord(this)">Remove</button>
           </div>
-        </div>
-        <div class="row mb-1">
           <div class="col-sm-2" id="chord6div" style="display: none">
             <center><label class="customlabel" for="tabchords6" id="chord6label">A</label></center>
             <textarea autocomplete="off" class="customtextarea3 mb-1" id="tabchords6" name="tabchords6"></textarea>
@@ -669,6 +689,16 @@
             <center><label class="customlabel" for="tabchords10" id="chord10label">A</label></center>
             <textarea autocomplete="off" class="customtextarea3 mb-1" id="tabchords10" name="tabchords10"></textarea>
             <button class="btn-mybtn ml-4 mb-1" id="rmchord10" name="rmchord10" onclick="removeChord(this)">Remove</button>
+          </div>
+          <div class="col-sm-2" id="chord11div" style="display: none">
+            <center><label class="customlabel" for="tabchords11" id="chord11label">A</label></center>
+            <textarea autocomplete="off" class="customtextarea3 mb-1" id="tabchords11" name="tabchords11"></textarea>
+            <button class="btn-mybtn ml-4 mb-1" id="rmchord11" name="rmchord11" onclick="removeChord(this)">Remove</button>
+          </div>
+          <div class="col-sm-2" id="chord12div" style="display: none">
+            <center><label class="customlabel" for="tabchords12" id="chord12label">A</label></center>
+            <textarea autocomplete="off" class="customtextarea3 mb-1" id="tabchords12" name="tabchords10"></textarea>
+            <button class="btn-mybtn ml-4 mb-1" id="rmchord12" name="rmchord12" onclick="removeChord(this)">Remove</button>
           </div>
       </div>
     </div>
