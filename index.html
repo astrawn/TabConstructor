@@ -489,74 +489,89 @@
       var chord11 = document.getElementById("tabchords11");
       var chord12 = document.getElementById("tabchords12");
       var chord = document.getElementById("chorddisplay").value;
-      var name = "A"; //getChordName();
+      var name = getChordName();
 
       if (chord1.value == ""){
         chord1.value = chord;
         document.getElementById("chord1div").style.display = "block";
-        document.getElementById("chord1label").value = name;
+        document.getElementById("chord1label").textContent = name;
       }
       else if (chord2.value == ""){
         chord2.value = chord;
         document.getElementById("chord2div").style.display = "block";
-        document.getElementById("chord2label").value = name;
+        document.getElementById("chord2label").textContent = name;
       }
       else if (chord3.value == ""){
         chord3.value = chord;
         document.getElementById("chord3div").style.display = "block";
-        document.getElementById("chord3label").value = name;
+        document.getElementById("chord3label").textContent = name;
       }
       else if (chord4.value == ""){
         chord4.value = chord;
         document.getElementById("chord4div").style.display = "block";
-        document.getElementById("chord4label").value = name;
+        document.getElementById("chord4label").textContent = name;
       }
       else if (chord5.value == ""){
         chord5.value = chord;
         document.getElementById("chord5div").style.display = "block";
-        document.getElementById("chord5label").value = name;
+        document.getElementById("chord5label").textContent = name;
       }
       else if (chord6.value == ""){
         chord6.value = chord;
         document.getElementById("chord6div").style.display = "block";
-        document.getElementById("chord6label").value = name;
+        document.getElementById("chord6label").textContent = name;
       }
       else if (chord7.value == ""){
         chord7.value = chord;
         document.getElementById("chord7div").style.display = "block";
-        document.getElementById("chord7label").value = name;
+        document.getElementById("chord7label").textContent = name;
       }
       else if (chord8.value == ""){
         chord8.value = chord;
         document.getElementById("chord8div").style.display = "block";
-        document.getElementById("chord8label").value = name;
+        document.getElementById("chord8label").textContent = name;
       }
       else if (chord9.value == ""){
         chord9.value = chord;
         document.getElementById("chord9div").style.display = "block";
-        document.getElementById("chord9label").value = name;
+        document.getElementById("chord9label").textContent = name;
       }
       else if (chord10.value == ""){
         chord10.value = chord;
         document.getElementById("chord10div").style.display = "block";
-        document.getElementById("chord10label").value = name;
+        document.getElementById("chord10label").textContent = name;
       }
       else if (chord11.value == ""){
         chord11.value = chord;
         document.getElementById("chord11div").style.display = "block";
-        document.getElementById("chord11label").value = name;
+        document.getElementById("chord11label").textContent = name;
       }
       else if (chord12.value == ""){
         chord12.value = chord;
         document.getElementById("chord12div").style.display = "block";
-        document.getElementById("chord12label").value = name;
+        document.getElementById("chord12label").textContent = name;
       }
     }
   </script>
 
   <script>
     function getChordName(){
+      var type = document.getElementById("chordtype").value;
+      var chord = document.getElementById("chords").value;
+      var sf = document.getElementById("sharpflat").value;
 
+      var chordname = "";
+
+      chordname += chord;
+      if(sf == "sharp"){
+        chordname += "♯";
+      }
+      else if(sf == "flat"){
+        chordname += "♭";
+      }
+      
+      chordname += type;
+      return chordname;
     }
   </script>
 
@@ -567,62 +582,62 @@
         case "rmchord1":
           document.getElementById("chord1div").style.display = "none";
           document.getElementById("tabchords1").value = "";
-          document.getElementById("chord1label").value = "";
+          document.getElementById("chord1label").textContent = "";
           break;
         case "rmchord2":
           document.getElementById("chord2div").style.display = "none";
           document.getElementById("tabchords2").value = "";
-          document.getElementById("chord2label").value = "";
+          document.getElementById("chord2label").textContent = "";
           break;
         case "rmchord3":
           document.getElementById("chord3div").style.display = "none";
           document.getElementById("tabchords3").value = "";
-          document.getElementById("chord3label").value = "";
+          document.getElementById("chord3label").textContent = "";
           break;
         case "rmchord4":
           document.getElementById("chord4div").style.display = "none";
           document.getElementById("tabchords4").value = "";
-          document.getElementById("chord4label").value = "";
+          document.getElementById("chord4label").textContent = "";
           break;
         case "rmchord5":
           document.getElementById("chord5div").style.display = "none";
           document.getElementById("tabchords5").value = "";
-          document.getElementById("chord5label").value = "";
+          document.getElementById("chord5label").textContent = "";
           break;
         case "rmchord6":
           document.getElementById("chord6div").style.display = "none";
           document.getElementById("tabchords6").value = "";
-          document.getElementById("chord6label").value = "";
+          document.getElementById("chord6label").textContent = "";
           break;
         case "rmchord7":
           document.getElementById("chord7div").style.display = "none";
           document.getElementById("tabchords7").value = "";
-          document.getElementById("chord7label").value = "";
+          document.getElementById("chord7label").textContent = "";
           break;
         case "rmchord8":
           document.getElementById("chord8div").style.display = "none";
           document.getElementById("tabchords8").value = "";
-          document.getElementById("chord8label").value = "";
+          document.getElementById("chord8label").textContent = "";
           break;
         case "rmchord9":
           document.getElementById("chord9div").style.display = "none";
           document.getElementById("tabchords9").value = "";
-          document.getElementById("chord9label").value = "";
+          document.getElementById("chord9label").textContent = "";
           break;
         case "rmchord10":
           document.getElementById("chord10div").style.display = "none";
           document.getElementById("tabchords10").value = "";
-          document.getElementById("chord10label").value = "";
+          document.getElementById("chord10label").textContent = "";
           break;
         case "rmchord11":
           document.getElementById("chord11div").style.display = "none";
           document.getElementById("tabchords11").value = "";
-          document.getElementById("chord11label").value = "";
+          document.getElementById("chord11label").textContent = "";
           break;
         case "rmchord12":
           document.getElementById("chord12div").style.display = "none";
           document.getElementById("tabchords12").value = "";
-          document.getElementById("chord12label").value = "";
+          document.getElementById("chord12label").textContent = "";
           break;
       }
     }
@@ -716,23 +731,36 @@
             <button class="btn-mybtn ml-2" id="addtotab" name="addtotab" onclick="addChordToTab()">Add Chord to Tab</button>
           </div>
           <div class="row mt-2 ml-3">
-              <label class="mr-2" for="chords">Chords:</label>
-              <select autocomplete="off" name="chords" id="chords" onchange="addchord()">
-                <option selected value>--</option>
-                <option value="A">A</option>
-                <option value="B">B</option>
-                <option value="C">C</option>
-                <option value="D">D</option>
-                <option value="E">E</option>
-                <option value="F">F</option>
-                <option value="G">G</option>
-                <option value="Custom">Custom</option>
-              </select>
-              <select autocomplete="off" class="ml-2" name="sharpflat" id="sharpflat" onchange="addchord()">
-                <option selected value>--</option>
-                <option value="sharp" id="sharp">&#x266f;</option>
-                <option value="flat" id="flat">&#x266d;</option>
-              </select>
+            <label class="mr-2" for="chords">Chords:</label>
+            <select autocomplete="off" name="chords" id="chords" onchange="addchord()">
+              <option selected value>--</option>
+              <option value="A">A</option>
+              <option value="B">B</option>
+              <option value="C">C</option>
+              <option value="D">D</option>
+              <option value="E">E</option>
+              <option value="F">F</option>
+              <option value="G">G</option>
+              <option value="Custom">Custom</option>
+            </select>
+            <select autocomplete="off" class="ml-2" name="sharpflat" id="sharpflat" onchange="addchord()">
+              <option selected value>--</option>
+              <option value="sharp" id="sharp">&#x266f;</option>
+              <option value="flat" id="flat">&#x266d;</option>
+            </select>
+            <select autocomplete="off" class="ml-2" name="chordtype" id="chordtype" onchange="addchord()">
+              <option selected value>--</option>
+              <option value="m" id="minor">m</option>
+              <option value="m7" id="minor7">m7</option>
+              <option value="maj7" id="major7">maj7</option>
+              <option value="aug" id="augment">aug</option>
+              <option value="dim" id="diminish">dim</option>
+              <option value="sus2" id="suspend2">sus2</option>
+              <option value="sus4" id="suspend4">sus4</option>
+              <option value="5" id="fifth">5</option>
+              <option value="6" id="sixth">6</option>
+              <option value="7" id="seventh">7</option>
+            </select>
           </div>
           <div class="row mt-2 ml-1">
             <div class="col-sm">
