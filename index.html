@@ -8,6 +8,7 @@
   <!-- Add jQuery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+  <!--adds a tab bar to the tab textarea-->
   <script>
     function addbar(){
       var text = $('#tab');
@@ -15,6 +16,7 @@
     }
   </script>
 
+  <!--updates a custom chord in righthand chord display-->
   <script>
     function updateCustom(string){
       
@@ -115,6 +117,7 @@
     }
   </script>
 
+  <!--updates chord in righthand chord display-->
   <script>
     function addchord(){
       var textArea = document.getElementById("chorddisplay");
@@ -278,14 +281,13 @@
 
           sf.value = "";
           updateCustom();
-          //textArea.value = "e |------|\nB |------|\nG |------|\nD |------|\nA |------|\nE |------|";
 
           break;
       }
     }  
   </script>
   
-
+  <!--**unused function** detects which key is pressed-->
   <script>
 
     key = 0;
@@ -304,6 +306,7 @@
     }
   </script>
 
+  <!--**unused function** meant to simulate typing when 'insert' key is pressed-->
   <script>
     function insert(ctrl){
       var index = document.getElementById(ctrl).selectionStart;
@@ -324,6 +327,7 @@
     }
   </script>
 
+  <!--downloads constructed tab as a .txt file-->
   <script>
     function download(filename, text){
       var element = document.createElement('a');
@@ -339,6 +343,7 @@
     }
   </script>
 
+  <!--copies the constructed tab to clipboard-->
   <script>
     function copyToClipboard(){
       var textarea = document.getElementById("tab");
@@ -348,6 +353,7 @@
     }
   </script>
 
+  <!--copies the constructed chord to clipboard-->
   <script>
     function copyChord(){
       var textarea = document.getElementById("chorddisplay");
@@ -357,6 +363,7 @@
     }
   </script>
 
+  <!--inserts chord from righthand chorddisplay into tab (needs an existing bar to display properly, inserts at mouse position in tab)-->
   <script>
     function insertChord(){
       var textArea = document.getElementById("chorddisplay");
@@ -384,6 +391,7 @@
     }
   </script>
 
+  <!--enable or disable custom E-string input (based on checkbox)-->
   <script>
     function changeECustom(){
       var E = document.getElementById("E-string");
@@ -399,6 +407,7 @@
     }
   </script>
 
+  <!--enable or disable custom A-string input-->
   <script>
     function changeACustom(){
       var A = document.getElementById("a-string");
@@ -414,6 +423,7 @@
     }
   </script>
 
+  <!--enable or disable custom D-string input-->
   <script>
     function changeDCustom(){
       var D = document.getElementById("d-string");
@@ -429,6 +439,7 @@
     }
   </script>
 
+  <!--enable or disable custom G-string input-->
   <script>
     function changeGCustom(){
       var G = document.getElementById("g-string");
@@ -444,6 +455,7 @@
     }
   </script>
 
+  <!--enable or disable custom B-string input-->
   <script>
     function changeBCustom(){
       var B = document.getElementById("b-string");
@@ -459,6 +471,7 @@
     }
   </script>
 
+  <!--enable or disable custom e-string input-->
   <script>
     function changeeCustom(){
       var e = document.getElementById("e-string");
@@ -474,6 +487,7 @@
     }
   </script>
 
+  <!--insert selected chord into chord display above tab-->
   <script>
     function addChordToTab(){
       var chord1 = document.getElementById("tabchords1");
@@ -554,6 +568,7 @@
     }
   </script>
 
+  <!--construct chord name from chord attribute dropdowns-->
   <script>
     function getChordName(){
       var type = document.getElementById("chordtype").value;
@@ -575,6 +590,7 @@
     }
   </script>
 
+  <!--remove chord from chord display above tab-->
   <script>
     function removeChord(chord){
 
