@@ -363,7 +363,7 @@
     }
   </script>
 
-  <!--inserts chord from righthand chorddisplay into tab (needs an existing bar to display properly, inserts at mouse position in tab)-->
+  <!--inserts chord from righthand chorddisplay into tab (needs an existing bar to display properly, inserts at cursor position in tab)-->
   <script>
     function insertChord(){
       var textArea = document.getElementById("chorddisplay");
@@ -743,8 +743,8 @@
       <div class="col-sm">
         <div class="customcontainer2">
           <div class="row mt-2 ml-3">
-            <button class="btn-mybtn" onClick="addbar()">Add Bar</button>
-            <button class="btn-mybtn ml-2" id="addtotab" name="addtotab" onclick="addChordToTab()">Add Chord to Tab</button>
+            <button class="btn-mybtn" title="Add a bar to the tab." onClick="addbar()">Add Bar</button>
+            <button class="btn-mybtn ml-2" id="addtotab" name="addtotab" title="Add chord to the 'Tab Chords' section." onclick="addChordToTab()">Add Chord to Tab</button>
           </div>
           <div class="row mt-2 ml-3">
             <label class="mr-2" for="chords">Chords:</label>
@@ -811,14 +811,14 @@
               <br><br>
               <textarea autocomplete="off" readonly class="customtextarea2" id="chorddisplay" name="chorddisplay">e |------|&#013;&#010;B |------|&#013;&#010;G |------|&#013;&#010;D |------|&#013;&#010;A |------|&#013;&#010;E |------|</textarea>
               <br>
-              <button class="btn-mybtn" id="cpchord" name="cpchord" style="width: 130px" onclick="copyChord()">Copy Chord</button>
+              <button class="btn-mybtn" id="cpchord" name="cpchord" style="width: 130px" title="Copy chord to clipboard." onclick="copyChord()">Copy Chord</button>
               <br>
-              <button class="btn-mybtn mt-2" id="insertchord" name="insertchord" style="width: 130px" onclick="insertChord()">Insert Chord</button>
+              <button class="btn-mybtn mt-2" id="insertchord" name="insertchord" style="width: 130px" title="Insert chord into tab at cursor position." onclick="insertChord()">Insert Chord</button>
             </div>
           </div>
           <div class="row mt-4 ml-3 mb-2">
-            <button class="btn-mybtn mr-2" id="cpbtn" name="cpbtn" onclick="copyToClipboard()">Copy to Clipboard</button>
-            <button class="btn-mybtn" id="dlbtn" name="dlbtn" onclick="download('mytab.txt', document.getElementById('tab').value)">Download as .txt File</button>
+            <button class="btn-mybtn mr-2" id="cpbtn" name="cpbtn" title="Copy tab to clipboard." onclick="copyToClipboard()">Copy to Clipboard</button>
+            <button class="btn-mybtn" id="dlbtn" name="dlbtn" title="Download tab as .txt file." onclick="download('mytab.txt', document.getElementById('tab').value)">Download as .txt File</button>
           </div>
         </div>
       </div>
