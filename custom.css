@@ -78,3 +78,10 @@
 .custominput {
   width: 70px;
 }
+
+.custominput2 {
+  width: 130px;
+  font-family: Verdana;
+  display: block;
+  font-size: small;
+}

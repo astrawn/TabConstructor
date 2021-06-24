@@ -137,6 +137,17 @@
         document.getElementById("d-string").disabled = true;
         document.getElementById("a-string").disabled = true;
         document.getElementById("E-string").disabled = true;
+        document.getElementById("minor").disabled = false;
+        document.getElementById("minor7").disabled = false;
+        document.getElementById("major7").disabled = false;
+        document.getElementById("augment").disabled = false;
+        document.getElementById("diminish").disabled = false;
+        document.getElementById("suspend2").disabled = false;
+        document.getElementById("suspend4").disabled = false;
+        document.getElementById("fifth").disabled = false;
+        document.getElementById("sixth").disabled = false;
+        document.getElementById("seventh").disabled = false;
+        document.getElementById("chordnameinput").disabled = true;
       }
 
       switch(chord){
@@ -264,6 +275,17 @@
           document.getElementById("a-string").disabled = false;
           document.getElementById("E-string").disabled = false;
 
+          document.getElementById("minor").disabled = true;
+          document.getElementById("minor7").disabled = true;
+          document.getElementById("major7").disabled = true;
+          document.getElementById("augment").disabled = true;
+          document.getElementById("diminish").disabled = true;
+          document.getElementById("suspend2").disabled = true;
+          document.getElementById("suspend4").disabled = true;
+          document.getElementById("fifth").disabled = true;
+          document.getElementById("sixth").disabled = true;
+          document.getElementById("seventh").disabled = true;
+
           document.getElementById("sharp").disabled = true;
           document.getElementById("flat").disabled = true;
           document.getElementById("enable-e").disabled = false;
@@ -278,6 +300,8 @@
           document.getElementById("enable-a").checked = true;
           document.getElementById("enable-E").disabled = false;
           document.getElementById("enable-E").checked = true;
+
+          document.getElementById("chordnameinput").disabled = false;
 
           sf.value = "";
           updateCustom();
@@ -505,65 +529,67 @@
       var chord = document.getElementById("chorddisplay").value;
       var name = getChordName();
 
-      if (chord1.value == ""){
-        chord1.value = chord;
-        document.getElementById("chord1div").style.display = "block";
-        document.getElementById("chord1label").textContent = name;
-      }
-      else if (chord2.value == ""){
-        chord2.value = chord;
-        document.getElementById("chord2div").style.display = "block";
-        document.getElementById("chord2label").textContent = name;
-      }
-      else if (chord3.value == ""){
-        chord3.value = chord;
-        document.getElementById("chord3div").style.display = "block";
-        document.getElementById("chord3label").textContent = name;
-      }
-      else if (chord4.value == ""){
-        chord4.value = chord;
-        document.getElementById("chord4div").style.display = "block";
-        document.getElementById("chord4label").textContent = name;
-      }
-      else if (chord5.value == ""){
-        chord5.value = chord;
-        document.getElementById("chord5div").style.display = "block";
-        document.getElementById("chord5label").textContent = name;
-      }
-      else if (chord6.value == ""){
-        chord6.value = chord;
-        document.getElementById("chord6div").style.display = "block";
-        document.getElementById("chord6label").textContent = name;
-      }
-      else if (chord7.value == ""){
-        chord7.value = chord;
-        document.getElementById("chord7div").style.display = "block";
-        document.getElementById("chord7label").textContent = name;
-      }
-      else if (chord8.value == ""){
-        chord8.value = chord;
-        document.getElementById("chord8div").style.display = "block";
-        document.getElementById("chord8label").textContent = name;
-      }
-      else if (chord9.value == ""){
-        chord9.value = chord;
-        document.getElementById("chord9div").style.display = "block";
-        document.getElementById("chord9label").textContent = name;
-      }
-      else if (chord10.value == ""){
-        chord10.value = chord;
-        document.getElementById("chord10div").style.display = "block";
-        document.getElementById("chord10label").textContent = name;
-      }
-      else if (chord11.value == ""){
-        chord11.value = chord;
-        document.getElementById("chord11div").style.display = "block";
-        document.getElementById("chord11label").textContent = name;
-      }
-      else if (chord12.value == ""){
-        chord12.value = chord;
-        document.getElementById("chord12div").style.display = "block";
-        document.getElementById("chord12label").textContent = name;
+      if (document.getElementById("chords").value != ""){
+        if (chord1.value == ""){
+          chord1.value = chord;
+          document.getElementById("chord1div").style.display = "block";
+          document.getElementById("chord1label").textContent = name;
+        }
+        else if (chord2.value == ""){
+          chord2.value = chord;
+          document.getElementById("chord2div").style.display = "block";
+          document.getElementById("chord2label").textContent = name;
+        }
+        else if (chord3.value == ""){
+          chord3.value = chord;
+          document.getElementById("chord3div").style.display = "block";
+          document.getElementById("chord3label").textContent = name;
+        }
+        else if (chord4.value == ""){
+          chord4.value = chord;
+          document.getElementById("chord4div").style.display = "block";
+          document.getElementById("chord4label").textContent = name;
+        }
+        else if (chord5.value == ""){
+          chord5.value = chord;
+          document.getElementById("chord5div").style.display = "block";
+          document.getElementById("chord5label").textContent = name;
+        }
+        else if (chord6.value == ""){
+          chord6.value = chord;
+          document.getElementById("chord6div").style.display = "block";
+          document.getElementById("chord6label").textContent = name;
+        }
+        else if (chord7.value == ""){
+          chord7.value = chord;
+          document.getElementById("chord7div").style.display = "block";
+          document.getElementById("chord7label").textContent = name;
+        }
+        else if (chord8.value == ""){
+          chord8.value = chord;
+          document.getElementById("chord8div").style.display = "block";
+          document.getElementById("chord8label").textContent = name;
+        }
+        else if (chord9.value == ""){
+          chord9.value = chord;
+          document.getElementById("chord9div").style.display = "block";
+          document.getElementById("chord9label").textContent = name;
+        }
+        else if (chord10.value == ""){
+          chord10.value = chord;
+          document.getElementById("chord10div").style.display = "block";
+          document.getElementById("chord10label").textContent = name;
+        }
+        else if (chord11.value == ""){
+          chord11.value = chord;
+          document.getElementById("chord11div").style.display = "block";
+          document.getElementById("chord11label").textContent = name;
+        }
+        else if (chord12.value == ""){
+          chord12.value = chord;
+          document.getElementById("chord12div").style.display = "block";
+          document.getElementById("chord12label").textContent = name;
+        }
       }
     }
   </script>
@@ -577,15 +603,26 @@
 
       var chordname = "";
 
-      chordname += chord;
-      if(sf == "sharp"){
-        chordname += "♯";
+      if(document.getElementById("chords").value != "Custom"){
+        chordname += chord;
+        if(sf == "sharp"){
+          chordname += "♯";
+        }
+        else if(sf == "flat"){
+          chordname += "♭";
+        }
+        
+        chordname += type;
       }
-      else if(sf == "flat"){
-        chordname += "♭";
+      else{
+        if(document.getElementById("chordnameinput").value == ""){
+          chordname = "Custom";
+        }
+        else{
+          chordname = document.getElementById("chordnameinput").value;
+        }
       }
-      
-      chordname += type;
+
       return chordname;
     }
   </script>
@@ -808,7 +845,9 @@
               </div>
             </div>
             <div class="col-sm">
-              <br><br>
+              <br>
+              <input disabled autocomplete="off" class="custominput2" placeholder="Chord name here..." id="chordnameinput" maxlength="12">
+              <br>
               <textarea autocomplete="off" readonly class="customtextarea2" id="chorddisplay" name="chorddisplay">e |------|&#013;&#010;B |------|&#013;&#010;G |------|&#013;&#010;D |------|&#013;&#010;A |------|&#013;&#010;E |------|</textarea>
               <br>
               <button class="btn-mybtn" id="cpchord" name="cpchord" style="width: 130px" title="Copy chord to clipboard." onclick="copyChord()">Copy Chord</button>
