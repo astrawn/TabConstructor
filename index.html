@@ -8,16 +8,16 @@
   <!-- Add jQuery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-  <!--adds a tab bar to the tab textarea-->
+  <title>TabConstructor</title>
+
   <script>
+    // adds a tab bar to the tab textarea
     function addbar(){
       var text = $('#tab');
       text.val(text.val() + "e |-------------------------------------------------------------------------------------------|\nB |-------------------------------------------------------------------------------------------|\nG |-------------------------------------------------------------------------------------------|\nD |-------------------------------------------------------------------------------------------|\nA |-------------------------------------------------------------------------------------------|\nE |-------------------------------------------------------------------------------------------|\n\n");
     }
-  </script>
 
-  <!--updates a custom chord in righthand chord display-->
-  <script>
+    // updates a custom chord in righthand chord display
     function updateCustom(string){
       
       if (string != null){
@@ -115,10 +115,10 @@
 
       document.getElementById("chorddisplay").value = text;
     }
-  </script>
+ 
 
-  <!--updates chord in righthand chord display-->
-  <script>
+    //updates chord in righthand chord display
+ 
     function addchord(){
       var textArea = document.getElementById("chorddisplay");
       var sf = document.getElementById("sharpflat");
@@ -149,6 +149,25 @@
         document.getElementById("seventh").disabled = false;
         document.getElementById("chordnameinput").disabled = true;
       }
+
+      var fullchord = "nothing";
+
+      $.ajax({
+        type: "POST",
+        url: "C:/Users/Alex Strawn/Desktop/Misc/chordDictionarySearch/chordSearch.py",
+        data: { 
+          chordname: fullchord
+        }        
+      }).done(function ( ) {
+        alert('OK');
+
+      }).fail(function ( jqXHR, textStatus, errorThrown ) {
+        console.log(jqXHR);
+        console.log(textStatus);
+        console.log(errorThrown);
+      });
+
+      alert("ajax done");
 
       switch(chord){
         case "":
@@ -309,13 +328,9 @@
           break;
       }
     }  
-  </script>
+
   
-  <!--**unused function** detects which key is pressed-->
-  <script>
-
-    key = 0;
-
+    // **unused function** detects which key is pressed
     function keyPress(e){
       var keynum;
 
@@ -323,15 +338,10 @@
         keynum = e.keyCode;
       } else if(e.which){ // Netscape/Firefox/Opera                 
         keynum = e.which;
-      }
-
-      key = keynum;
-      
+      }      
     }
-  </script>
 
-  <!--**unused function** meant to simulate typing when 'insert' key is pressed-->
-  <script>
+    // **unused function** meant to simulate typing when 'insert' key is pressed
     function insert(ctrl){
       var index = document.getElementById(ctrl).selectionStart;
       var end = document.getElementById(ctrl).value.length;
@@ -349,10 +359,9 @@
       document.getElementById(ctrl).focus();
       document.getElementById.selectionEnd = index;
     }
-  </script>
 
-  <!--downloads constructed tab as a .txt file-->
-  <script>
+
+    // downloads constructed tab as a .txt file
     function download(filename, text){
       var element = document.createElement('a');
       element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
@@ -365,30 +374,25 @@
 
       document.body.removeChild(element);
     }
-  </script>
 
-  <!--copies the constructed tab to clipboard-->
-  <script>
+    // copies the constructed tab to clipboard
     function copyToClipboard(){
       var textarea = document.getElementById("tab");
       textarea.select();
       document.execCommand("copy");
       textarea.blur();
     }
-  </script>
 
-  <!--copies the constructed chord to clipboard-->
-  <script>
+
+    // copies the constructed chord to clipboard
     function copyChord(){
       var textarea = document.getElementById("chorddisplay");
       textarea.select();
       document.execCommand("copy");
       textarea.blur();
     }
-  </script>
 
-  <!--inserts chord from righthand chorddisplay into tab (needs an existing bar to display properly, inserts at cursor position in tab)-->
-  <script>
+    // inserts chord from righthand chorddisplay into tab (needs an existing bar to display properly, inserts at cursor position in tab)
     function insertChord(){
       var textArea = document.getElementById("chorddisplay");
       var arrayOfLines = textArea.value.split("\n");
@@ -413,10 +417,8 @@
       }
 
     }
-  </script>
 
-  <!--enable or disable custom E-string input (based on checkbox)-->
-  <script>
+    // enable or disable custom E-string input (based on checkbox)
     function changeECustom(){
       var E = document.getElementById("E-string");
       var check = document.getElementById("enable-E");
@@ -429,10 +431,8 @@
 
       updateCustom(E);
     }
-  </script>
 
-  <!--enable or disable custom A-string input-->
-  <script>
+    // enable or disable custom A-string input
     function changeACustom(){
       var A = document.getElementById("a-string");
       var check = document.getElementById("enable-a");
@@ -445,10 +445,8 @@
 
       updateCustom(A);
     }
-  </script>
 
-  <!--enable or disable custom D-string input-->
-  <script>
+    // enable or disable custom D-string input
     function changeDCustom(){
       var D = document.getElementById("d-string");
       var check = document.getElementById("enable-d");
@@ -461,10 +459,8 @@
 
       updateCustom(D);
     }
-  </script>
 
-  <!--enable or disable custom G-string input-->
-  <script>
+    // enable or disable custom G-string input
     function changeGCustom(){
       var G = document.getElementById("g-string");
       var check = document.getElementById("enable-g");
@@ -477,10 +473,8 @@
 
       updateCustom(G);
     }
-  </script>
 
-  <!--enable or disable custom B-string input-->
-  <script>
+    // enable or disable custom B-string input
     function changeBCustom(){
       var B = document.getElementById("b-string");
       var check = document.getElementById("enable-b");
@@ -493,10 +487,8 @@
 
       updateCustom(B);
     }
-  </script>
 
-  <!--enable or disable custom e-string input-->
-  <script>
+    // enable or disable custom e-string input
     function changeeCustom(){
       var e = document.getElementById("e-string");
       var check = document.getElementById("enable-e");
@@ -509,10 +501,8 @@
 
       updateCustom(e);
     }
-  </script>
 
-  <!--insert selected chord into chord display above tab-->
-  <script>
+    // insert selected chord into chord display above tab
     function addChordToTab(){
       var chord1 = document.getElementById("tabchords1");
       var chord2 = document.getElementById("tabchords2");
@@ -592,10 +582,8 @@
         }
       }
     }
-  </script>
 
-  <!--construct chord name from chord attribute dropdowns-->
-  <script>
+    // construct chord name from chord attribute dropdowns
     function getChordName(){
       var type = document.getElementById("chordtype").value;
       var chord = document.getElementById("chords").value;
@@ -625,10 +613,8 @@
 
       return chordname;
     }
-  </script>
 
-  <!--remove chord from chord display above tab-->
-  <script>
+    // remove chord from chord display above tab
     function removeChord(chord){
 
       switch(chord.id){
